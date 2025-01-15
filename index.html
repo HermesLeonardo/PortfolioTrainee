@@ -1,96 +1,174 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Pessoal</title>
+    <link rel="stylesheet" href="style/animation.css">  
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/top_nav.css">
+    <link rel="stylesheet" href="style/profile.css">
+    <link rel="stylesheet" href="style/about.css">
+    <link rel="stylesheet" href="style/skills.css">
+    <link rel="stylesheet" href="style/contact.css">
+    <link rel="stylesheet" href="style/projects.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <title>Meu Site Pessoal</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <!-- NAVEGAÇÃO PRINCIPAL -->
+      <nav class="top-nav">
+        <ul>
+          <li class="nav home">
+            <a href=""><p>Início</p> <img class="nav-icon" src="images/icons/home-icon.png" alt=""></a>
+          </li>
+          <li class="nav about">
+            <a href="#about-section"><p>Sobre</p> <img class="nav-icon" src="images/icons/about-icon.png" alt=""></a>
+          </li>
+          <li class="nav skills">
+            <a href="#skills-section"><p>Habilidades</p> <img class="nav-icon" src="images/icons/skill-icon.png" alt=""></a>
+          </li>
+          <li class="nav project">
+            <a href="#projects-section"><p>Projetos</p> <img class="nav-icon active" src="images/icons/projects-icon.png" alt=""></a>
+          </li>
+        </ul>
+        <a href="#contact-section" id="let-connect-btn">Vamos Conversar</a>
+      </nav>
+      <main>
+        <!-- CARTÃO DE PERFIL -->
+        <div class="profile-container fixed ">
+          <img src="images/meowish_profile.png" alt="" class="profile-pic">
+          <h3 class="name">Meowish</h3>
+          <p class="short-about-me">TikToker e Programador, e adoro jogar</p>
 
-  <link rel="stylesheet" href="styles/geral.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <script src="components/mode.js" defer></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
+          <nav class="social-media-nav">
+            <ul>
+              <li>
+                <a href=""><img src="images/icons/instagram.png" alt="ícone-instagram"></a>
+              </li>
+              <li>
+                <a href=""><img src="images/icons/twitter.png" alt="ícone-twitter"></a>
+              </li>
+              <li>
+                <a href=""><img src="images/icons/tiktok.png" alt="ícone-tiktok"></a>
+              </li>
+              <li>
+                <a href=""><img src="images/icons/facebook.png" alt="ícone-facebook"></a>        
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-<body class="light-mode">
+        <div class="section-container">
+          <!-- SEÇÃO SOBRE -->
+          <section id="about-section" class="section about">
+            <h1 class="heading">DESENVOLVEDOR <br><span>WEB</span></br></h1>
+            <p class="more-about-me">
+              Sou um programador apaixonado por criar sites e projetos legais. Também sou criador de conteúdo no TikTok, onde compartilho minhas criações de programação e mostro wallpapers baseados em código. Você pode me encontrar no TikTok como "Meowish". Ah, e sou das Filipinas.</p>
+  
+            <div class="years-of-doing d-grid">
+              <div class="experience">
+                <h3 class="years">+3</h3>
+                <p>ANOS DE <br>EXPERIÊNCIA</br></p>
+              </div>
+              <div class="projects">
+                <h3 class="years">+10</h3>
+                <p> PROJETOS <br> CONCLUÍDOS</br></p>
+              </div>
+              <div class="clients">
+                <h3 class="years">+20</h3>
+                <p>CLIENTES <br> MUNDIAIS</br></p>
+              </div>   
+            </div>
+          </section>
+          
+          <!-- SEÇÃO DE HABILIDADES -->
+          <section id="skills-section" class="section skills">
+            <h1 class="heading"> HABILIDADES <br><span>ESPECIALIZADAS</span></br></h1>
+            <button class="tech-stacks-btn selected">TECNOLOGIAS</button>
+            <button class="tools-btn">FERRAMENTAS</button>
+  
+            <div class="skills-container tech-stack-skills d-grid">
+              <!-- adicionar e deletar habilidades em skills.js -->
+            </div>
+            <div class="skills-container tools-skills d-grid">
+                <!-- adicionar e deletar habilidades em skills.js -->
+            </div>
+          </section>
+  
+          <!-- SEÇÃO DE PROJETOS -->
+          <section id="projects-section" class="section project">
+            <h1 class="heading"> PROJETOS <br><span>RECENTES</span></br></h1>
 
-  <header class="header">
+            <div class="projects-container">
+              <div class="project-card">
+                <img src="images/icons/image.png" alt="ícone-do-projeto" class="project-icon">
+                <div class="title-description-container">
+                  <h4 class="project-title">Título do Projeto</h4>
+                  <p class="project-description">Descrição do projeto</p>
+                </div> 
+                <img class="arrow-icon" src="images/icons/up-right-arrow.png" alt="ícone-seta" >
+              </div>
+              <div class="project-card">
+                <img src="images/icons/image.png" alt="ícone-do-projeto" class="project-icon">
+                <div class="title-description-container">
+                  <h4 class="project-title">Título do Projeto</h4>
+                  <p class="project-description">Descrição do projeto</p>
+                </div> 
+                <img class="arrow-icon" src="images/icons/up-right-arrow.png" alt="ícone-seta" >
+              </div>
+              <div class="project-card">
+                <img src="images/icons/image.png" alt="ícone-do-projeto" class="project-icon">
+                <div class="title-description-container">
+                  <h4 class="project-title">Título do Projeto</h4>
+                  <p class="project-description">Descrição do projeto</p>
+                </div> 
+                <img class="arrow-icon" src="images/icons/up-right-arrow.png" alt="ícone-seta" >
+              </div>
+            </div>
+          </section>
+  
+          <!-- SEÇÃO DE CONTATO -->
+          <section id="contact-section">
+            <h1 class="heading">VAMOS TRABALHAR<br><span> JUNTOS</span></br></h1>
+            <form action="">
+              <div class="input-container">
+                <input type="text" class="input" placeholder="Seu Nome" required>
+                <input type="email" class="input" placeholder="Seu@email.com" required>
+              </div>    
+              <textarea name="" id="message" class="input" placeholder="Mensagem para mim" required ></textarea>
+              <button class="submit-btn">Enviar</button>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <p class="copyright-text"></p>
 
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Alternar modo escuro">
-      <i class="fas fa-moon"></i>
-    </button>
-
-    <h1>Leonardo Hermes de Carvalho</h1>
-    <p>
-      Sou apaixonado por transformar desafios em soluções inovadoras, criando códigos que não apenas resolvem problemas,
-      mas moldam o futuro da tecnologia e impactam positivamente o mundo ao nosso redor. Bem-vindo ao meu portfólio.
-    </p>
-
-    <div class="social-links">
-      <!-- Ícone do GitHub -->
-      <a href="https://github.com/HermesLeonardo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    
-      <!-- Ícone do LinkedIn -->
-      <a href="https://www.linkedin.com/in/leonardo-hermes-de-carvalho-66196b26b/?trk=opento_sprofile_details" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    
-      <!-- Ícone do Gmail -->
-      <a href="mailto:leohermescarvalho18@gmail.com" aria-label="Gmail">
-        <i class="fas fa-envelope"></i>
-      </a>
+        <p>Me visite em</p>
+        <nav class="socmed-nav">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/johnharvey.luslos.1/"><img src="images/icons/facebook.png" alt="ícone-facebook" class="socmed-icon"></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@harvey.dev"><img src="images/icons/tiktok.png" alt="ícone-tiktok" class="socmed-icon"></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/tech_harvy/"><img src="images/icons/instagram.png" alt="ícone-instagram" class="socmed-icon"></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@zensei-xg4bw"><img src="images/icons/youtube.png" alt="ícone-youtube" class="socmed-icon"></a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
     </div>
-    
-    
 
-    <nav class="navigation">
-      <ul>
-        <li><button onclick="loadContent('sections/projetos.html', 'main-content')"><i class="fas fa-laptop-code"></i>
-            Projetos</button></li>
-        <li><button onclick="loadContent('sections/jornada.html', 'main-content')"><i class="fas fa-flag"></i>
-            Jornada</button></li>
-        <li><button onclick="loadContent('sections/contato.html', 'main-content')"><i class="fas fa-envelope"></i>
-            Contato</button></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main-content">
-    <!-- O conteúdo carregado pelos botões aparecerá aqui -->
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2025 Leonardo Hermes de Carvalho. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    function loadContent(url, elementId) {
-      fetch(url)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById(elementId).innerHTML = data; // Atualiza o conteúdo
-        })
-        .catch(error => console.error('Erro ao carregar o conteúdo:', error));
-    }
-
-    function toggleDarkMode() {
-      // Alterna as classes de modo escuro e claro
-      document.body.classList.toggle('dark-mode');
-      document.body.classList.toggle('light-mode');
-
-      // Atualiza o ícone do botão de alternância
-      const icon = document.querySelector('.dark-mode-toggle i');
-      if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun'); // Troca para o ícone do sol
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon'); // Troca para o ícone da lua
-      }
-    }
-  </script>
-</body>
-
+    <script type="module" src="script/main.js"></script>
+  </body>
 </html>
