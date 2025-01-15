@@ -1,4 +1,4 @@
-/* Reset */
+/* Estilos Gerais */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -21,19 +21,32 @@ body.light-mode {
 /* Header */
 .header {
   text-align: center;
-  padding: 80px;
-  height: 50vh;
+  padding: 5vh 5vw; /* Responsivo ao tamanho da tela */
+  height: auto; /* Altura adaptável */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: inherit;
-  position: relative; 
+  position: relative;
 }
 
+.header h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem); /* Tamanho adaptável */
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.header p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem); 
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 30px;
+}
 
-/* Parte feita para o botão de modo escuro */
+/* Botão de Modo Escuro */
 .dark-mode-toggle {
   position: absolute;
   top: 20px;
@@ -42,122 +55,88 @@ body.light-mode {
   border: none;
   cursor: pointer;
   font-size: 2rem;
-  transition: transform 0.3s ease, color 0.3s ease;
   z-index: 10;
 }
 
-/* Transição suave de cor */
 .dark-mode-toggle i {
   transition: color 0.3s ease;
 }
 
-/* Quando no modo escuro, o ícone do sol fica branco */
 body.dark-mode .dark-mode-toggle i {
-  color: white; /* Ícone do sol branco */
+  color: white;
 }
 
-/* Quando no modo claro, o ícone tem cor padrão (por exemplo, preto ou cinza) */
 body.light-mode .dark-mode-toggle i {
-  color: #333; /* Cor padrão do ícone do sol */
+  color: #333;
 }
 
-
-
-
-
-
-/* Nome */
-.header h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
-}
-
-/* Descrição */
-p {
-  font-size: 1.4rem;
-  line-height: 1.6; 
-  color: #666; /* Cor do texto da descrição */
-  margin-bottom: 50px;
-}
-
-/* Social Links */
+/* Links Sociais */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  gap: 5vw; /* Espaçamento adaptável */
   flex-wrap: wrap;
 }
 
-/* Ajustando os links de ícones sociais */
 .social-links a {
-  margin: 0 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px; /* Definindo largura do fundo circular */
-  height: 100px; /* Definindo altura do fundo circular */
-  border-radius: 50%; /* Tornando o fundo circular */
-  background-color: #e0e0e0; /* Cor de fundo circular */
+  width: clamp(50px, 10vw, 100px);
+  height: clamp(50px, 10vw, 100px);
+  border-radius: 50%;
+  background-color: #e0e0e0;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito de hover nos links */
+.social-links i {
+  font-size: clamp(1.5rem, 4vw, 3rem); /* Ícones responsivos */
+  color: #333;
+}
+
 .social-links a:hover {
   transform: scale(1.1);
-  background-color: #4a90e2; /* Cor do fundo ao passar o mouse */
+  background-color: #4a90e2;
 }
 
-/* Aumentando o tamanho dos ícones sociais */
-.social-links i {
-  font-size: 3rem; /* Aumentando o tamanho dos ícones */
-  color: #333; /* Cor padrão dos ícones */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* Efeito de hover nos ícones */
 .social-links a:hover i {
-  color: white; /* Cor branca ao passar o mouse */
-  transform: scale(1.2); /* Aumentando um pouco o ícone no hover */
+  color: white;
 }
 
-/* Navigation */
+/* Botões deNavegação */
+
 .navigation {
-  display: flex; /* Usando flexbox para alinhar os itens lado a lado */
-  justify-content: center; /* Alinhando os botões ao centro */
-  gap: 30px; /* Espaçamento entre os botões */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adicionando espaço entre os botões */
   margin-top: 20px;
+  flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha, se necessário */
 }
 
-/* Estilos dos botões de navegação */
+
 .navigation button {
-  padding: 15px 25px; /* Aumentando o padding horizontal para maior clique */
-  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  margin: 0;
+  padding: clamp(10px, 2vw, 15px) clamp(55px, 100px, 25px);
+  font-size: clamp(1rem, 1vw, 1.8rem);
   text-transform: uppercase;
   color: white;
-  background: linear-gradient(90deg, #4a90e2, #50e3c2); /* Degradê azul */
-  border: none;
+  background: linear-gradient(90deg, #4a90e2, #50e3c2);
+  border: 2px solid #4a90e2;
   border-radius: 8px;
-  display: flex; /* Usando flexbox dentro do botão */
-  align-items: center; /* Centralizando os ícones e o texto dentro do botão */
-  justify-content: center; /* Garantindo que o conteúdo fique centralizado */
-  gap: 10px; /* Espaçamento entre ícones e texto */
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  gap: 4px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-/* Estilos dos botões ao passar o mouse */
+
 .navigation button:hover {
-  background: linear-gradient(90deg, #50e3c2, #4a90e2); /* Degradê azul invertido no hover */
-  color: #121212;
+  background: linear-gradient(90deg, #50e3c2, #4a90e2);
   transform: translateY(-5px);
 }
 
-/* Estilos do modo escuro nos botões de navegação */
+/*Botões de Navegação - Estilos para o modo escuro */
 body.dark-mode .navigation button {
   background: linear-gradient(90deg, #444, #725b5b);
 }
@@ -166,7 +145,9 @@ body.dark-mode .navigation button:hover {
   background: linear-gradient(90deg, #666, #444);
 }
 
-/* Main Content */
+
+
+/* Conteúdo Principal */
 main {
   padding: 20px;
 }
@@ -185,17 +166,32 @@ body.dark-mode main section {
   border-color: #444;
 }
 
-/* Footer */
+/* Rodapé */
 .footer {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 2vh 2vw;
   background: linear-gradient(90deg, #65a4ed, #8a75de);
-  width: 100%; /* Faz o footer ocupar toda a largura */
   color: white;
-  font-size: 1rem;
-  position: relative; /* Para garantir que o footer se comporte corretamente */
-  bottom: 0; /* Fixa o footer na parte inferior */
-  margin-top: 50px; /* Adicionando espaçamento entre os botões e o footer */
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-align: center;
+  margin-top: 50px;
 }
 
+body.dark-mode .footer {
+  background: linear-gradient(90deg, #83a0a6, #202b37);
+  color: #eee;
+}
+
+
+/* Responsividade - Ajuste Geral */
+@media (max-width: 768px) {
+  .header h1 {
+    white-space: normal; /* Permite quebra de linha */
+  }
+
+  .navigation {
+    flex-direction: column; /* Empilha os botões */
+  }
+}

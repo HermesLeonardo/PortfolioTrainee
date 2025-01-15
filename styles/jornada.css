@@ -4,11 +4,6 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode .journey-section {
-    background-color: #333;
-    color: #eee;
-}
-
 .journey-section h2 {
     text-align: center;
     margin-bottom: 30px;
@@ -16,10 +11,7 @@ body.dark-mode .journey-section {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     -webkit-background-clip: text;
     color: transparent;
-}
-
-body.dark-mode .journey-section h2 {
-    color: #0788a2;
+    transition: color 0.3s ease;
 }
 
 .journey-timeline {
@@ -41,18 +33,10 @@ body.dark-mode .journey-section h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.dark-mode .timeline-item {
-    background: #444;
-    border-color: #555;
-}
-
+/*Hover para a animação ao passar o mouse no card*/
 .timeline-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-body.dark-mode .timeline-item:hover {
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-item h3 {
@@ -60,16 +44,8 @@ body.dark-mode .timeline-item:hover {
     margin-bottom: 10px;
 }
 
-body.dark-mode .timeline-item h3 {
-    color: #00b4d8;
-}
-
 .timeline-item p {
     color: #555;
-}
-
-body.dark-mode .timeline-item p {
-    color: #ddd;
 }
 
 .timeline-item.left {
@@ -80,60 +56,21 @@ body.dark-mode .timeline-item p {
     left: 55%;
 }
 
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -12.5px;
-    background-color: white;
-    border: 4px solid #007bff;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-body.dark-mode .timeline-item::after {
-    background-color: #444;
-    border-color: #00b4d8;
-}
-
-.timeline-item.left::after {
-    left: -12.5px;
-}
-
-.timeline-item.right::after {
-    right: -12.5px;
-}
-
-.timeline-item.left::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 22px;
-    right: 100%;
-    border: 10px solid transparent;
-    border-right-color: #ddd;
-}
-
-body.dark-mode .timeline-item.left::before {
-    border-right-color: #555;
-}
-
+.timeline-item::after,
+.timeline-item.left::before,
 .timeline-item.right::before {
     content: '';
     position: absolute;
+}
+
+
+
+.timeline-item.left::before,
+.timeline-item.right::before {
     width: 0;
     height: 0;
     top: 22px;
-    left: 100%;
     border: 10px solid transparent;
-    border-left-color: #ddd;
-}
-
-body.dark-mode .timeline-item.right::before {
-    border-left-color: #555;
 }
 
 .journey-timeline::before {
@@ -148,10 +85,7 @@ body.dark-mode .timeline-item.right::before {
     z-index: 0;
 }
 
-body.dark-mode .journey-timeline::before {
-    background: linear-gradient(to bottom, #00b4d8, #007bff);
-}
-
+/*Bolinha do timeline com os icones*/
 .timeline-icon {
     position: absolute;
     left: 50%;
@@ -167,7 +101,101 @@ body.dark-mode .journey-timeline::before {
     align-items: center;
 }
 
+
+
+/* Estilos para o modo escuro */
+body.dark-mode .journey-section {
+    background-color: #333;
+    color: #eee;
+}
+
+body.dark-mode .journey-section h2 {
+    color: #0788a2;
+}
+
+body.dark-mode .timeline-item {
+    background: #444;
+    border-color: #555;
+}
+
+body.dark-mode .timeline-item:hover {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .timeline-item h3 {
+    color: #00b4d8;
+}
+
+body.dark-mode .timeline-item p {
+    color: #ddd;
+}
+
+body.dark-mode .timeline-item::after {
+    background-color: #444;
+    border-color: #00b4d8;
+}
+
+body.dark-mode .timeline-item.left::before {
+    border-right-color: #555;
+}
+
+body.dark-mode .timeline-item.right::before {
+    border-left-color: #555;
+}
+
+body.dark-mode .journey-timeline::before {
+    background: linear-gradient(to bottom, #83a0a6, #202b37);
+}
+
 body.dark-mode .timeline-icon {
     background-color: #444;
     border-color: #00b4d8;
+}
+
+
+
+
+
+
+/* Responsividade Geral, tambem retirado os icones dependendo do tamanho da tela */
+
+/* Para telas menores que 1024px  */
+@media (max-width: 1024px) {
+    .journey-section {
+        padding: 20px;
+    }
+
+    .journey-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-icon {
+        display: none; /* Remove os ícones em telas menores que 1024px */
+    }
+}
+
+/* Para telas maiores que 1024px (desktop) */
+@media (min-width: 1025px) {
+    .journey-section h2 {
+        font-size: 4.5rem;
+    }
+
+    .timeline-item {
+        width: 45%;
+    }
+
+    .timeline-icon {
+        font-size: 1.5rem;
+        display: flex; /* Exibe os ícones novamente em telas maiores que 1024px */
+    }
 }
