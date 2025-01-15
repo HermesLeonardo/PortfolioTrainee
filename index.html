@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Pessoal</title>
+
+  <link rel="stylesheet" href="styles/geral.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="components/mode.js" defer></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="light-mode">
+
+  <header class="header">
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Alternar modo escuro">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <h1>Leonardo Hermes de Carvalho</h1>
+    <p>
+      Sou apaixonado por transformar desafios em soluções inovadoras, criando códigos que não apenas resolvem problemas,
+      mas moldam o futuro da tecnologia e impactam positivamente o mundo ao nosso redor. Bem-vindo ao meu portfólio.
+    </p>
+
+    <div class="social-links">
+      <!-- Ícone do GitHub -->
+      <a href="https://github.com/HermesLeonardo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    
+      <!-- Ícone do LinkedIn -->
+      <a href="https://www.linkedin.com/in/leonardo-hermes-de-carvalho-66196b26b/?trk=opento_sprofile_details" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    
+      <!-- Ícone do Gmail -->
+      <a href="mailto:leohermescarvalho18@gmail.com" aria-label="Gmail">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    
+    
+
+    <nav class="navigation">
+      <ul>
+        <li><button onclick="loadContent('sections/projetos.html', 'main-content')"><i class="fas fa-laptop-code"></i>
+            Projetos</button></li>
+        <li><button onclick="loadContent('sections/jornada.html', 'main-content')"><i class="fas fa-flag"></i>
+            Jornada</button></li>
+        <li><button onclick="loadContent('sections/contato.html', 'main-content')"><i class="fas fa-envelope"></i>
+            Contato</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- O conteúdo carregado pelos botões aparecerá aqui -->
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Leonardo Hermes de Carvalho. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function loadContent(url, elementId) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data; // Atualiza o conteúdo
+        })
+        .catch(error => console.error('Erro ao carregar o conteúdo:', error));
+    }
+
+    function toggleDarkMode() {
+      // Alterna as classes de modo escuro e claro
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+
+      // Atualiza o ícone do botão de alternância
+      const icon = document.querySelector('.dark-mode-toggle i');
+      if (document.body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun'); // Troca para o ícone do sol
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon'); // Troca para o ícone da lua
+      }
+    }
+  </script>
+</body>
+
+</html>
