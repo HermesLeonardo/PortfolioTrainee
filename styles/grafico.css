@@ -1,0 +1,19 @@
+.knowledge-charts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .chart-container {
+    width: 200px; 
+    height: 200px;
+    margin: 20px auto;
+  }
+  
+  canvas {
+    max-width: 100%; 
+    max-height: 100%;
+  }
+  

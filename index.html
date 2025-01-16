@@ -7,15 +7,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style/animation.css">  
-    <link rel="stylesheet" href="style/global.css">
-    <link rel="stylesheet" href="style/top_nav.css">
-    <link rel="stylesheet" href="style/profile.css">
-    <link rel="stylesheet" href="style/about.css">
-    <link rel="stylesheet" href="style/skills.css">
-    <link rel="stylesheet" href="style/contact.css">
-    <link rel="stylesheet" href="style/projects.css">
-    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="styles/animacao.css">  
+    <link rel="stylesheet" href="styles/geral.css">
+    <link rel="stylesheet" href="styles/top_nav.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/sobremim.css">
+    <link rel="stylesheet" href="styles/habilidades.css">
+    <link rel="stylesheet" href="styles/contato.css">
+    <link rel="stylesheet" href="styles/projetos.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/grafico.css">
     <title>Meu Site Pessoal</title>
   </head>
   <body>
@@ -41,24 +42,25 @@
       <main>
         <!-- CARTÃO DE PERFIL -->
         <div class="profile-container fixed ">
-          <img src="images/meowish_profile.png" alt="" class="profile-pic">
-          <h3 class="name">Meowish</h3>
-          <p class="short-about-me">TikToker e Programador, e adoro jogar</p>
+          <img src="images/fotinha.png" alt="" class="profile-pic">
+          <h3 class="name">Leonardo Hermes</h3>
+          <p class="short-about-me">Estudante de Engenharia de Software</p>
 
           <nav class="social-media-nav">
             <ul>
+             <!-- CARTÃO DE SOCIAL MEDIA -->
+
               <li>
-                <a href=""><img src="images/icons/instagram.png" alt="ícone-instagram"></a>
+                <a href="mailto:leohermescarvalho18@gmail.com"><img src="images/icons/gmail.png" alt="ícone-gmail"></a>
               </li>
               <li>
-                <a href=""><img src="images/icons/twitter.png" alt="ícone-twitter"></a>
+                <a href="https://github.com/HermesLeonardo"><img src="images/icons/github.png" alt="ícone-github"></a>
               </li>
               <li>
-                <a href=""><img src="images/icons/tiktok.png" alt="ícone-tiktok"></a>
+                <a href="https://www.linkedin.com/in/leonardo-hermes-de-carvalho-66196b26b/?trk=opento_sprofile_details"><img src="images/icons/linkedin.png" alt="ícone-linkedin"></a>
               </li>
-              <li>
-                <a href=""><img src="images/icons/facebook.png" alt="ícone-facebook"></a>        
-              </li>
+              
+              
             </ul>
           </nav>
         </div>
@@ -66,31 +68,38 @@
         <div class="section-container">
           <!-- SEÇÃO SOBRE -->
           <section id="about-section" class="section about">
-            <h1 class="heading">DESENVOLVEDOR <br><span>WEB</span></br></h1>
+            <h1 class="heading">DESENVOLVEDOR <br><span>FULL-STACK</span></br></h1>
             <p class="more-about-me">
-              Sou um programador apaixonado por criar sites e projetos legais. Também sou criador de conteúdo no TikTok, onde compartilho minhas criações de programação e mostro wallpapers baseados em código. Você pode me encontrar no TikTok como "Meowish". Ah, e sou das Filipinas.</p>
-  
-            <div class="years-of-doing d-grid">
-              <div class="experience">
-                <h3 class="years">+3</h3>
-                <p>ANOS DE <br>EXPERIÊNCIA</br></p>
+              Sou apaixonado por transformar desafios em soluções inovadoras, criando códigos que não apenas resolvem problemas, mas moldam o futuro da tecnologia e impactam positivamente o mundo ao nosso redor. Bem-vindo ao meu portfólio.  
+
+
+              <div class="knowledge-charts d-grid">
+                <div class="chart-container">
+                  <canvas id="frontendChart"></canvas>
+                  <p>Frontend</p>
+                </div>
+                <div class="chart-container">
+                  <canvas id="backendChart"></canvas>
+                  <p>Backend</p>
+                </div>
+                <div class="chart-container">
+                  <canvas id="databaseChart"></canvas>
+                  <p>Database</p>
+                </div>
               </div>
-              <div class="projects">
-                <h3 class="years">+10</h3>
-                <p> PROJETOS <br> CONCLUÍDOS</br></p>
-              </div>
-              <div class="clients">
-                <h3 class="years">+20</h3>
-                <p>CLIENTES <br> MUNDIAIS</br></p>
-              </div>   
-            </div>
+              
+
           </section>
           
           <!-- SEÇÃO DE HABILIDADES -->
           <section id="skills-section" class="section skills">
             <h1 class="heading"> HABILIDADES <br><span>ESPECIALIZADAS</span></br></h1>
+
             <button class="tech-stacks-btn selected">TECNOLOGIAS</button>
             <button class="tools-btn">FERRAMENTAS</button>
+            <button class="database-btn">DATABASES</button>
+
+            
   
             <div class="skills-container tech-stack-skills d-grid">
               <!-- adicionar e deletar habilidades em skills.js -->
@@ -98,6 +107,9 @@
             <div class="skills-container tools-skills d-grid">
                 <!-- adicionar e deletar habilidades em skills.js -->
             </div>
+            <div class="skills-container database-skills d-grid">
+              <!-- adicionar e deletar habilidades em skills.js -->
+          </div>
           </section>
   
           <!-- SEÇÃO DE PROJETOS -->
@@ -149,26 +161,22 @@
       <footer>
         <p class="copyright-text"></p>
 
-        <p>Me visite em</p>
+        <p>Me contate também em:</p>
         <nav class="socmed-nav">
           <ul>
             <li>
-              <a href="https://www.facebook.com/johnharvey.luslos.1/"><img src="images/icons/facebook.png" alt="ícone-facebook" class="socmed-icon"></a>
+              <a href="https://www.instagram.com/leohermes.18/"><img src="images/icons/instagram.png" alt="ícone-instagram" class="socmed-icon"></a>
             </li>
             <li>
-              <a href="https://www.tiktok.com/@harvey.dev"><img src="images/icons/tiktok.png" alt="ícone-tiktok" class="socmed-icon"></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/tech_harvy/"><img src="images/icons/instagram.png" alt="ícone-instagram" class="socmed-icon"></a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/@zensei-xg4bw"><img src="images/icons/youtube.png" alt="ícone-youtube" class="socmed-icon"></a>
+              <a href="https://wa.me/5543984027825"><img src="images/icons/whatsapp.png" alt="ícone-whatsapp" class="socmed-icon"></a>
             </li>
           </ul>
         </nav>
       </footer>
     </div>
 
-    <script type="module" src="script/main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/grafico.js"></script>
   </body>
 </html>
