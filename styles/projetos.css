@@ -1,0 +1,81 @@
+/* Estilos para a seção de Projetos, incluindo os cartões dos projetos e animações de interação */
+#projects-section .heading {
+  margin-bottom: 2rem;
+}
+
+#projects-section .projects-container .project-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: 0.4s;
+  opacity: 0;
+  background-color: transparent;
+  border: 1px solid var(--accent-color); /* Borda sutil para os cards */
+  flex-direction: row; /* Garante que a imagem e os textos fiquem lado a lado */
+}
+
+.project-card .project-icon {
+  width: clamp(5rem, 15vw, 10rem);
+  margin-right: 1rem;
+}
+
+.project-card .title-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-card .project-title {
+  font-size: var(--medium-Fsize);
+  line-height: 1.2em;
+  margin-bottom: 0.5rem;
+  color: rgb(9, 248, 252);
+}
+
+.project-card .project-description {
+  color: rgb(255, 255, 255);
+  font-size: var(--XS-Fsize);
+  opacity: 0.7;
+}
+
+.project-card .arrow-icon {
+  position: absolute;
+  max-width: 0.9rem;
+  right: 20px;
+  top: 30px;
+  transition: 0.4s;
+}
+
+#projects-section .projects-container .project-card:hover {
+  background-color: rgba(0, 0, 0, 0.150); /* Efeito de hover para destacar o card */
+}
+
+#projects-section .projects-container .project-card:hover > .arrow-icon {
+  top: 15px;
+  right: 15px;
+}
+
+/* Botão "Conheça mais do meu trabalho" */
+#projects-section .cta-button-container {
+  text-align: left;
+  margin-top: 3rem;
+}
+
+#projects-section .cta-button-container a {
+  background-color: var(--accent-color);
+  color: var(--neutral-color);
+  padding: 1rem 3rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#projects-section .cta-button-container a:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
