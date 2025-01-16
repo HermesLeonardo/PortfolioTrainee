@@ -1,19 +1,49 @@
 .knowledge-charts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .chart-container {
-    width: 200px; 
-    height: 200px;
-    margin: 20px auto;
-  }
-  
-  canvas {
-    max-width: 100%; 
-    max-height: 100%;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  opacity: 0; 
+  animation: charts-entry 1s ease-out forwards; /* Aplica a animação */
+}
+
+.chart-container {
+  width: 200px; 
+  height: 200px;
+  margin: 20px auto;
+  opacity: 0; 
+  animation: chart-item-entry 1s ease-out forwards; 
+  animation-delay: 0.3s; 
+}
+
+
+/* Seção de gráficos (ficando invisível até entrar na tela) */
+.knowledge-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+}
+
+/* Animação de entrada para a seção de gráficos */
+.knowledge-charts.animate {
+  animation: charts-entry 1s ease-out forwards; /* Animação de entrada para a seção */
+}
+
+/* Animação de entrada para cada gráfico individual */
+.chart-container {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  opacity: 0;
+}
+
+/* Animação de entrada de cada gráfico individual */
+.chart-container.animate {
+  animation: chart-item-entry 1s ease-out forwards;
+  animation-delay: 0.3s; /* Atraso entre animações dos gráficos */
+}
+
