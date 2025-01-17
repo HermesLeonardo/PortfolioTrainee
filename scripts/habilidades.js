@@ -123,6 +123,17 @@ export function skillFunctionality() {
   const backendSkills = document.querySelector('.backend-skills');
   const databaseSkills = document.querySelector('.database-skills');
 
+  // Configuração inicial, necessario pois antes alguns itens estavam misturados
+  function initializeSkills() {
+    frontendBtn.classList.add('selected');
+    backendBtn.classList.remove('selected');
+    databaseBtn.classList.remove('selected');
+
+    frontendSkills.style.display = 'grid'; 
+    backendSkills.style.display = 'none';
+    databaseSkills.style.display = 'none';
+  }
+
   // Exibição da categoria Frontend
   frontendBtn.addEventListener('click', () => {
     frontendBtn.classList.add('selected');
@@ -155,4 +166,7 @@ export function skillFunctionality() {
     backendSkills.style.display = 'none';
     databaseSkills.style.display = 'grid';
   });
+
+  // Inicializa o estado da página
+  initializeSkills();
 }
