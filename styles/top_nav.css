@@ -1,0 +1,88 @@
+/* Estilo da navegação superior com animações e efeitos */
+nav.top-nav {
+  display: flex;
+  gap: 0.8rem;
+  position: fixed;
+  top: 15px;
+  z-index: 10;
+}
+
+.top-nav ul {
+  display: flex;
+  justify-content: space-between;
+  background-color: #495057; /* Fundo da barra de navegação */
+  list-style: none;
+  padding: 1.8rem 1rem;
+  padding-top: 1.0rem;
+  width: 10.8rem; 
+  border-radius: 8px; 
+  box-shadow: 0px 0px 4px var(--dark-icon-outline); 
+  border-radius: 8px;
+}
+
+.top-nav ul li {
+  position: relative;
+  transition: all 0.2s ease; /* Ajuste para transições mais rápidas */
+}
+
+.top-nav ul li a {
+  color: var(--primary-color); /* Cor dos ícones padrão */
+  transition: all 0.2s ease;
+}
+
+.top-nav ul a p {
+  background-color: #403f3f2e; /* Fundo do rótulo ao passar o mouse */
+  position: absolute;
+  border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff; /* Cor do texto do rótulo */
+  font-size: 0.90rem;
+  padding: 0.2rem 0.5rem;
+  opacity: 0;
+  z-index: 10;
+  display: none;
+}
+
+.top-nav ul li a:hover > p {
+  display: inline;
+  animation: topnav-label 0.2s forwards ease-out; /* Animação do rótulo ao passar o mouse */
+}
+
+.top-nav ul a .nav-icon {
+  max-width: 1.3rem;
+  filter: drop-shadow(0px 0px 4px var(--dark-icon-outline)); /* Adicionado contorno configurável */
+  transition: filter 0.3s ease;
+}
+
+.top-nav ul a .nav-icon.active {
+  filter: invert(53%) sepia(60%) saturate(371%) hue-rotate(145deg) 
+          drop-shadow(0px 0px 4px var(--dark-icon-outline)); /* Contorno para ícones ativos */
+}
+
+/* Botão "Vamos Conversar" */
+.top-nav a#let-connect-btn {
+  background-color: #04b6bc; /* Cor do botão */
+  border: 1px solid var(--accent-color);
+  width: 7.7rem;
+  padding-top: 0.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #1e1e1e; /* Cor do texto do botão */
+  text-align: center;
+  font-size: calc(var(--XS-Fsize) - 0.05rem);
+  cursor: pointer;
+}
+
+.top-nav a#let-connect-btn:hover {
+  opacity: 0.8; /* Efeito ao passar o mouse no botão */
+}
+
+/* Variável para ajustar o contorno escuro dos ícones */
+:root {
+  --dark-icon-outline: rgba(34, 40, 49, 0.7); /* Contorno escuro padrão no modo escuro */
+}
+
+:root.light-mode {
+  --dark-icon-outline: rgba(0, 0, 0, 0.877); /* Contorno mais claro para o modo claro */
+}
