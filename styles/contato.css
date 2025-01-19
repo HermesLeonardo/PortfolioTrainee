@@ -1,0 +1,106 @@
+/* Estilos do formulário de contato (input e textarea com animação) */
+#contact-section {
+  position: relative;
+  text-align: end;
+  margin-bottom: 5rem;
+}
+
+#contact-section .heading {
+  margin-bottom: 2rem;
+}
+
+#contact-section .input {
+  opacity: 0; /* Os inputs começam invisíveis */
+}
+
+#contact-section form input::placeholder, 
+#contact-section form textarea::placeholder {
+  color: #ffffff;
+  font-size: var(--XS-Fsize);
+}
+
+#contact-section form input, 
+#contact-section form textarea {
+  color: var(--primary-color);
+  background-color: var(--pastel-color);
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #00adb5;
+  font-size: var(--medium-Fsize); /* Alteração: aumento do tamanho da fonte do conteúdo digitado */
+}
+
+#contact-section form input {
+  margin-bottom: 0.5rem;
+}
+
+#contact-section form textarea {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  height: 10rem;
+}
+
+#contact-section form .submit-btn {
+  font-size: var(--XS-Fsize);
+  text-align: end;
+  background-color: transparent;
+  padding: 0.4rem 1.4rem;
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  color: var(--neutral-color);
+  cursor: pointer;
+}
+
+@media (width > 550px) {
+  #contact-section form .input-container {
+    display: flex;
+    gap: 0.8rem;
+  }
+}
+
+/* Modo claro */
+body.light-mode #contact-section form input::placeholder, 
+body.light-mode #contact-section form textarea::placeholder {
+  color: #080808;
+}
+
+body.light-mode #contact-section form input, 
+body.light-mode #contact-section form textarea {
+  color: #000;
+  background-color: #f5ebe0;
+  border: 1px solid #d6ccc2;
+  font-size: var(--medium-Fsize); /* Alteração: mantém o aumento no modo claro */
+}
+
+body.light-mode #contact-section form .submit-btn {
+  background-color: #d6ccc2; /* Fundo mais suave */
+  border-color: #d6ccc2;
+  color: #000000; /* Texto escuro */
+}
+
+/* Botões de controle de tamanho da fonte */
+#contact-section .font-size-controls {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+
+/*Alterar a cor do botão se necessario*/
+#contact-section .font-size-controls button {
+  background-color: var(--accent-color);
+  color: var(--neutral-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: var(--XS-Fsize);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-section .font-size-controls button:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
