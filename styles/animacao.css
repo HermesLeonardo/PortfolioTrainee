@@ -1,0 +1,176 @@
+/* Animação de entrada para o label do menu */
+@keyframes topnav-label {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+  20% {
+    opacity: 0.2;
+    top: 0.7rem;
+  }
+  50% {
+    opacity: 0.4;
+    top: 0.8rem;
+  }
+  75% {
+    opacity: 0.6;
+    top: 1.5rem;
+  }
+  100% {
+    opacity: 1;
+    top: 2rem;
+  }
+}
+
+/* Animação de entrada do perfil (movimento de baixo para cima) */
+@keyframes profile-entry {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Animação do nome de entrada (movimento de baixo para cima) */
+@keyframes name-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Animação de entrada do "sobre mim" no perfil (movimento de baixo para cima) */
+@keyframes profile-about-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  40% {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+}
+
+/* Animação de entrada do título da seção */
+@keyframes sec-heading-entry {
+  0% {
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Animação de entrada do "anos de experiência" (movimento de baixo para cima) */
+@keyframes years-doing-entry {
+  40% {
+    opacity: 0.1;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Animação dos botões de habilidade (movimento da esquerda para a direita) */
+@keyframes skill-button-entry {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* Animação de entrada das cartas (habilidades e projetos) (movimento de baixo para cima) */
+@keyframes cards-entry {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Animação de entrada dos inputs de contato (movimento de baixo para cima) */
+@keyframes contact-input-entry {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Animação de entrada para a seção de gráficos (movimento de baixo para cima) */
+@keyframes charts-entry {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Animação de saída para a seção de gráficos (desaparecer) */
+@keyframes charts-exit {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+/* Animação de entrada para cada gráfico individual (movimento de baixo para cima) */
+@keyframes chart-item-entry {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Animação de saída para cada gráfico individual (desaparecer) */
+@keyframes chart-item-exit {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}

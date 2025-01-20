@@ -20,6 +20,10 @@ nav.top-nav {
   border-radius: 8px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .top-nav ul li {
   position: relative;
   transition: all 0.2s ease; /* Ajuste para transições mais rápidas */
