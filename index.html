@@ -9,6 +9,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="images/icons/development.png" type="images/icons/development.png">
 
   <link rel="stylesheet" href="styles/animacao.css">
   <link rel="stylesheet" href="styles/geral.css">
@@ -20,19 +21,29 @@
   <link rel="stylesheet" href="styles/projetos.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/grafico.css">
-  <title>Meu Site Pessoal</title>
+  <link rel="stylesheet" href="styles/animacao-card.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <title>Leonardo Hermes </title>
 </head>
 
 <body>
+  <button id="darkModeToggle">
+    <i id="darkModeIcon" class="fa fa-sun"></i>
+  </button>
+
   <div class="main-wrapper">
     <!-- NAVEGAÇÃO PRINCIPAL -->
     <nav class="top-nav">
       <ul>
         <li class="nav home">
-          <a href="">
-            <p>Início</p> <img class="nav-icon" src="images/icons/home-icon.png" alt="">
+          <a href="#" id="home-link">
+            <p>Início</p>
+            <img class="nav-icon" src="images/icons/home-icon.png" alt="Ícone de Início">
           </a>
         </li>
+
         <li class="nav about">
           <a href="#about-section">
             <p>Sobre</p> <img class="nav-icon" src="images/icons/about-icon.png" alt="">
@@ -53,7 +64,7 @@
     </nav>
     <main>
       <!-- CARTÃO DE PERFIL -->
-      <div class="profile-container fixed ">
+      <div class="profile-container fixed" id="profile-card">
         <img src="images/fotinha.png" alt="" class="profile-pic">
         <h3 class="name">Leonardo Hermes</h3>
         <p class="short-about-me">Estudante de Engenharia de Software</p>
@@ -63,14 +74,20 @@
             <!-- CARTÃO DE SOCIAL MEDIA -->
 
             <li>
-              <a href="mailto:leohermescarvalho18@gmail.com"><img src="images/icons/gmail.png" alt="ícone-gmail"></a>
+              <a href="mailto:leohermescarvalho18@gmail.com" target="_blank">
+                <img src="images/icons/gmail.png" alt="ícone-gmail">
+              </a>
             </li>
             <li>
-              <a href="https://github.com/HermesLeonardo"><img src="images/icons/github.png" alt="ícone-github"></a>
+              <a href="https://github.com/HermesLeonardo" target="_blank">
+                <img src="images/icons/github.png" alt="ícone-github">
+              </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/leonardo-hermes-de-carvalho-66196b26b/?trk=opento_sprofile_details"><img
-                  src="images/icons/linkedin.png" alt="ícone-linkedin"></a>
+              <a href="https://www.linkedin.com/in/leonardo-hermes-de-carvalho-66196b26b/?trk=opento_sprofile_details"
+                target="_blank">
+                <img src="images/icons/linkedin.png" alt="ícone-linkedin">
+              </a>
             </li>
 
 
@@ -78,12 +95,13 @@
         </nav>
       </div>
 
+
       <div class="section-container">
         <!-- SEÇÃO SOBRE -->
         <section id="about-section" class="section about">
           <h1 class="heading">DESENVOLVEDOR <br><span>FULL-STACK</span></br></h1>
           <p class="more-about-me">
-            Sou apaixonado por transformar desafios em soluções inovadoras, criando códigos que não apenas resolvem
+            Motivado em transformar desafios em soluções inovadoras, criando códigos que não apenas resolvem
             problemas, mas moldam o futuro da tecnologia e impactam positivamente o mundo ao nosso redor. Bem-vindo ao
             meu portfólio.
 
@@ -177,31 +195,36 @@
 
         <!-- SEÇÃO DE CONTATO -->
         <section id="contact-section">
-          <h1 class="heading">VAMOS TRABALHAR<br><span> JUNTOS</span></br></h1>
-          <form action="">
+          <h2 class="heading">Entre em Contato</h2>
+          <form>
             <div class="input-container">
-              <input type="text" class="input" placeholder="Seu Nome" required>
-              <input type="email" class="input" placeholder="Seu@email.com" required>
+              <input type="text" placeholder="Seu Nome">
+              <input type="email" placeholder="Seu E-mail">
             </div>
-            <textarea name="" id="message" class="input" placeholder="Mensagem para mim" required></textarea>
-            <button class="submit-btn">Enviar</button>
+            <textarea placeholder="Sua Mensagem"></textarea>
+            <div class="font-size-controls">
+              <button type="button" id="increase-font" aria-label="Aumentar tamanho da fonte">A+</button>
+              <button type="button" id="decrease-font" aria-label="Diminuir tamanho da fonte">A-</button>
+            </div>
+            <button type="submit" class="submit-btn">Enviar</button>
           </form>
         </section>
+
       </div>
     </main>
     <footer>
-      <p class="copyright-text"></p>
+      <p class="copyright-text">Copyright © 2025 Leonardo Hermes, Todos os direitos reservados.</p>
 
       <p>Me contate também em:</p>
       <nav class="socmed-nav">
         <ul>
           <li>
-            <a href="https://www.instagram.com/leohermes.18/"><img src="images/icons/instagram.png"
+            <a href="https://www.instagram.com/leohermes.18/" target="_blank"><img src="images/icons/instagram.png"
                 alt="ícone-instagram" class="socmed-icon"></a>
           </li>
           <li>
-            <a href="https://wa.me/5543984027825"><img src="images/icons/whatsapp.png" alt="ícone-whatsapp"
-                class="socmed-icon"></a>
+            <a href="https://wa.me/5543984027825" target="_blank"><img src="images/icons/whatsapp.png"
+                alt="ícone-whatsapp" class="socmed-icon"></a>
           </li>
         </ul>
       </nav>
@@ -211,6 +234,10 @@
   <script type="module" src="scripts/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="scripts/grafico.js"></script>
+  <script src="scripts/animacao-card.js"></script>
+  <script src="scripts/dark-mode.js"></script>
+  <script src="scripts/botaoFonteContato.js"></script>
+
 </body>
 
 </html>
