@@ -80,7 +80,7 @@ section .heading {
 }
 
 section .heading span {
-  color: var(--pastel-color);
+  text-decoration: none; /* Garante que spans não tenham sublinhado */
 }
 
 /* Botão de modo escuro alterar cores do icone aqui */
@@ -119,6 +119,30 @@ body.dark-mode button#darkModeToggle:hover {
   background-color: var(--accent-color);
 }
 
+a {
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+
+html, body {
+  margin: 0; /* Remove margens globais */
+  padding: 0; /* Remove padding global */
+  overflow-x: hidden; /* Evita scroll horizontal */
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Garante que o conteúdo seja empurrado para cima */
+  min-height: 100vh; /* Altura mínima da página inteira */
+}
+
+.main-wrapper {
+  flex: 1; /* Faz o conteúdo ocupar o máximo espaço possível */
+}
+
+
 /* Media queries */
 @media (width >= 1000px) {
   main {
@@ -139,9 +163,51 @@ body.dark-mode button#darkModeToggle:hover {
   }
 }
 
+/* Container principal */
+.main-wrapper {
+  --main-wrapper-max-width: 1100px;
+  --main-wrapper-padding: 10%;
+  width: 100%;  /* Garante que o contêiner ocupe 100% da largura */
+  max-width: var(--main-wrapper-max-width);  /* Limita a largura máxima */
+  margin-inline: auto;
+}
+
+/* Ajustes para as seções e itens dentro delas */
+section {
+  margin-top: 10rem;
+  width: 100%;  /* Garante que as seções ocupem toda a largura */
+  padding: 0 1rem;  /* Adiciona um pouco de padding para evitar transbordamento */
+}
+
+section .heading {
+  font-size: clamp(var(--mobile-XL-Fsize), 8vw, var(--desktop-XL-Fsize));
+  text-align: center;
+  line-height: 1em;
+  margin-bottom: 1rem;
+  opacity: 0;
+  width: 100%;  /* Garante que o título ocupe 100% da largura */
+}
+
+/* Impede overflow horizontal em telas pequenas */
+html, body {
+  overflow-x: hidden;  
+  width: 100%;         
+  height: 100%;        
+  margin: 0;           
+}
+
+
 @media (max-width: 600px) {
   button#darkModeToggle {
     font-size: 1.2rem;
     padding: 8px 12px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 320px) {
+  /* Aqui, você pode adicionar ajustes adicionais conforme necessário */
+  .main-wrapper {
+    padding: 5%;  /* Ajusta o padding para telas pequenas */
   }
 }

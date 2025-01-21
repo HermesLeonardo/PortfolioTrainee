@@ -1,14 +1,36 @@
-/* Estilos para a seção de Projetos, incluindo os cartões dos projetos e animações de interação */
+/* Estilos para a seção de Projetos */
 #projects-section {
   position: relative;
   padding: 2rem 1rem;
-  background-color: rgba(34, 40, 49, 0); /* Fundo escuro semi-transparente */
-  border-radius: 16px; 
+  background-color: var(--neutral-color);
+  color: var(--primary-color);
+  border-radius: 16px;
+  transform: translateY(0);
+  transition: 0.4s;
+  display: flex; /* Centraliza a seção */
+  flex-direction: column;
+  align-items: center;
+}
+
+#projects-section.light-mode {
+  background-color: #ffffff; /* Cor de fundo para modo claro */
 }
 
 #projects-section .heading {
   margin-bottom: 2rem;
-  color: var(--primary-color); 
+  color: #f8f9fa; /* Cor do texto do modo escuro */
+  text-align: center; /* Centraliza o texto */
+}
+
+#projects-section.light-mode .heading {
+  color: #212529; /* Cor do texto para modo claro */
+}
+
+#projects-section .projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os cards */
+  gap: 1rem; /* Espaçamento entre os cards */
 }
 
 #projects-section .projects-container .project-card {
@@ -20,18 +42,29 @@
   cursor: pointer;
   border-radius: 16px;
   transition: 0.4s;
-  opacity: 0;
-  background-color: rgba(86, 84, 84, 0.078); 
-  border: 1px solid var(--accent-color); /* Borda sutil para os cards */
-  flex-direction: row; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  border: 1px solid #adb5bd;
+  flex-direction: row;
+  width: 100%; 
+  max-width: 700px; /* Aumentei o limite de largura para 600px */
+}
+
+
+#projects-section.light-mode .projects-container .project-card {
+  background-color: rgba(196, 8, 8, 0.078); /* Fundo do card para modo claro */
+  border: 1px solid #343a40; /* Borda sutil para modo claro */
 }
 
 .project-card .project-icon {
   width: clamp(5rem, 15vw, 10rem);
   margin-right: 1rem;
-  background-color: #adb5bd;
+  background-color: #343a40; /* Cor do fundo do ícone no modo escuro */
   padding: 0.5rem;
-  border-radius: 8px; /* Bordas arredondadas para os ícones */
+  border-radius: 8px;
+}
+
+.project-card.light-mode .project-icon {
+  background-color: #6c6d6d; /* Ícone para modo claro */
 }
 
 .project-card .title-description-container {
@@ -41,17 +74,45 @@
 }
 
 .project-card .project-title {
-  font-size: var(--medium-Fsize);
+  font-size: 26px;
   line-height: 1.2em;
   margin-bottom: 0.5rem;
-  color: #212529; /* Título em cor de destaque */
+  color: #f8f9fa; /* Título com base no tema escuro */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.project-card.light-mode .project-title {
+  color: #212529; /* Título para modo claro */
+  text-decoration: none; /* Remove o sublinhado */
 }
 
 .project-card .project-description {
-  color: #343a40; 
-  font-size: var(--XS-Fsize);
+  color: #adb5bd; /* Subtexto no modo escuro */
+  font-size: 1rem;
   opacity: 0.9;
+  text-decoration: none; /* Remove o sublinhado */
 }
+
+.project-card.light-mode .project-description {
+  color: #6c6d6d; /* Subtexto para modo claro */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+
+
+/* Garantia de que não há sublinhado nos títulos e descrições */
+#projects-section .projects-container .project-card .project-title,
+#projects-section .projects-container .project-card .project-description {
+  text-decoration: none !important; /* Força a remoção de sublinhado */
+}
+
+/* Estilo direto para spans dentro dos títulos (se necessário) */
+#projects-section .projects-container .project-card .project-title span,
+#projects-section .projects-container .project-card .project-description span {
+  text-decoration: none !important;
+  color: inherit; /* Garante que a cor seja herdada corretamente */
+}
+
 
 .project-card .arrow-icon {
   position: absolute;
@@ -59,37 +120,51 @@
   right: 20px;
   top: 30px;
   transition: 0.4s;
-  filter: brightness(1.2); /* Destacando a seta no fundo escuro */
+  filter: brightness(1.2); /* Seta destacada no fundo escuro */
+}
+
+.project-card.light-mode .arrow-icon {
+  filter: brightness(1.0);
 }
 
 #projects-section .projects-container .project-card:hover {
-  background-color: rgba(0, 0, 0, 0.5); /* Efeito de hover para destacar o card */
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-#projects-section .projects-container .project-card:hover > .arrow-icon {
-  top: 15px;
-  right: 15px;
+#projects-section.light-mode .projects-container .project-card:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Botão "Conheça mais do meu trabalho" */
+/* Botões da seção */
 #projects-section .cta-button-container {
-  text-align: left;
+  text-align: center;
   margin-top: 3rem;
 }
 
 #projects-section .cta-button-container a {
-  background-color: var(--accent-color);
-  color: var(--neutral-color);
+  background-color: #343a40; /* Cor do botão no modo escuro */
+  color: #f8f9fa;
   padding: 1rem 3rem;
   border-radius: 25px;
   font-size: 1rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+#projects-section.light-mode .cta-button-container a {
+  background-color: #6c6d6d; /* Cor do botão para modo claro */
+  color: #212529; /* Cor do texto no botão para modo claro */
 }
 
 #projects-section .cta-button-container a:hover {
-  background-color: var(--primary-color);
-  color: var(--accent-color);
+  background-color: #f8f9fa; 
+  color: #343a40;
+}
+
+#projects-section.light-mode .cta-button-container a:hover {
+  background-color: #212529; 
+  color: #6c6d6d;
 }
 
 /* Responsividade para dispositivos móveis */
@@ -99,11 +174,27 @@
   }
 
   .project-card {
-    flex-direction: column; /* Ícone acima dos textos em telas menores */
+    flex-direction: column; 
     text-align: center;
   }
 
   .project-card .project-icon {
     margin: 0 auto 1rem auto;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Ajusta os botões e centraliza a seção */
+  #projects-section .cta-button-container a {
+    padding: 0.7rem 2rem; /* Botões menores */
+    font-size: 0.9rem; 
+  }
+
+  .project-card {
+    padding: 1rem; /* Reduz o espaçamento interno dos cards */
+  }
+
+  #projects-section .heading {
+    font-size: 1.2rem; /* Reduz o tamanho do título */
   }
 }

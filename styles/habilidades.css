@@ -67,8 +67,30 @@
 }
 
 /* Ajuste para telas maiores */
-@media(width >= 550px) {
+@media (max-width: 550px) {
   #skills-section .skills-container.d-grid {
-      grid-template-columns: repeat(3, 33%);
+    grid-template-columns: 100%; /* Uma coluna em telas menores */
+    justify-items: center; /* Centraliza os itens */
+  }
+
+  #skills-section .skills-container .skill {
+    width: 90%; /* Ocupar uma maior parte da tela */
   }
 }
+
+/* Ajuste para dispositivos menores */
+@media (max-width: 320px) {
+  #skills-section .skills-container.d-grid {
+    grid-template-columns: 100%; /* Uma coluna para dispositivos pequenos */
+    justify-items: center;
+  }
+}
+
+/* Ajuste para dispositivos menores */
+@media (max-width: 1020px) {
+  #skills-section .skills-container.d-grid {
+    grid-template-columns: 100%; /* Uma coluna para dispositivos pequenos */
+    justify-items: center;
+  }
+}
+

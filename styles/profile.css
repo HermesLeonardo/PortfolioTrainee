@@ -1,10 +1,12 @@
-/* Estilos para a seção de perfil, incluindo animações de entrada e configuração do layout */
+/* Estilos para a seção de perfil, parte onde tem a foto, incluindo animações de entrada e configuração do layout */
 .profile-container {
   padding: 2.3rem 10%;
   border-radius: 16px;
-  background: linear-gradient(90deg, #6f6f70, #a9a9a9);
+  background: linear-gradient(90deg, #4b4b4b, #878787);
   text-align: center;
   margin-bottom: 7rem;
+  transition: all 0.5s ease;
+  /* Adicionando uma transição suave para expansão */
 }
 
 .profile-container.fixed {
@@ -14,10 +16,18 @@
   animation: profile-entry 1.5s forwards ease;
 }
 
+.profile-container.expanded {
+  transform: scale(1.2);
+  /* Aumentando o tamanho do card */
+  transition: all 0.5s ease;
+  /* Garantindo que a expansão tenha animação suave */
+}
+
 .profile-container .profile-pic {
   border-radius: 16px;
   margin-bottom: 1.5rem;
   max-width: 26rem;
+  transition: all 0.5s ease;
 }
 
 .profile-container .name {
@@ -29,7 +39,7 @@
 }
 
 .profile-container .short-about-me {
-  color: var(--pastel-color);
+  color: var(--neutral-color);
   font-size: 18px;
   font-weight: 600;
   opacity: 0.7;
@@ -49,12 +59,23 @@
   max-width: 1.5rem;
 }
 
-@media(width >= 1000px) {
+@media (min-width: 1000px) {
   .profile-container.fixed {
-      position: sticky;
-      top: 5.3rem;
-      max-height: 35rem;
-      width: 50rem;
-      padding: 2.3rem 1.6rem;
+    position: sticky;
+    top: 5.3rem;
+    max-height: 35rem;
+    width: 50rem;
+    padding: 2.3rem 1.6rem;
+  }
+
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .profile-container.expanded {
+    transform: scale(1.05);
   }
 }

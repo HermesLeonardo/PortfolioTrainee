@@ -1,4 +1,4 @@
-/* Estilos para a seção "Sobre Mim", incluindo título, descrição e anos de experiência */
+/* Estilos para a seção "Sobre Mim", incluindo título */
 #about-section .heading {
   font-size: clamp(3.125rem, 9vw, 6.25rem);
 }
@@ -10,16 +10,6 @@
   margin-bottom: 5rem;
   text-align: center;
   opacity: 0;
-}
-
-#about-section .years-of-doing.d-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-  text-align: center;
-  max-width: 16rem;
-  margin-inline: auto;
 }
 
 .years-of-doing.d-grid .clients {
@@ -53,5 +43,12 @@
 
   .years-of-doing.d-grid .clients {
       grid-column: initial;
+  }
+}
+/* Responsividade para dispositivos móveis */
+@media (max-width: 320px) {
+  /* Aqui, você pode adicionar ajustes adicionais conforme necessário */
+  .main-wrapper {
+    padding: 5%;  /* Ajusta o padding para telas pequenas */
   }
 }

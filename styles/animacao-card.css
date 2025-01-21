@@ -1,0 +1,63 @@
+
+/* Variáveis de largura para expansão do card */
+:root {
+    --expanded-width: 100%; /* Largura expandida desejada */
+    --expanded-width-mobile: 90%; /* Largura para dispositivos móveis */
+}
+
+/* Estilo para animação do card de perfil */
+@keyframes expandCard {
+    0% {
+        transform: scale(1);
+        /* Estado inicial */
+    }
+
+    100% {
+        transform: scale(1.4);
+        /* Expansão total */
+        width: var(--expanded-width, 100%);
+        /* Controla a largura expandida */
+    }
+}
+
+/* Função para expandir a largura do card */
+@keyframes retractCard {
+    0% {
+        transform: scale(1);
+        /* Estado inicial */
+        width: var(--expanded-width, 100%);
+        /* Controla a largura expandida */
+    }
+
+    100% {
+        transform: scale(1.2);
+        /* Reduz o tamanho da expansão */
+        width: var(--expanded-width-mobile, 90%);
+        /* Controla a largura retractada */
+    }
+}
+
+/* Card expandido com largura ajustável */
+.profile-container.expanded {
+    animation: expandCard 0.5s forwards ease-in-out;
+    transform-origin: center;
+    transform: scale(var(--expanded-scale, 1.2));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    
+    width: var(--expanded-width, 100%); /* Garante que a largura seja aplicada */
+}
+
+/* Estado base com transições suaves */
+.profile-container {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    /* Suaviza as mudanças de escala e sombra */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile-container.expanded {
+        transform: scale(1.1);
+        /* Reduz o tamanho da expansão em dispositivos menores */
+    }
+}
+
