@@ -25,7 +25,7 @@
 /* Layout da seção de habilidades em grid */
 #skills-section .skills-container.d-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas por padrão */
   gap: 10px;
 }
 
@@ -38,13 +38,16 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   background-color: transparent;
   border: 1px solid var(--accent-color);
   border-radius: 5px;
   padding: 0.7rem;
   transition: 0.2s;
   cursor: pointer;
-  opacity: 0;
+  width: 200px; /* Largura fixa dos cards */
+  height: 60px; /* Altura fixa dos cards */
 }
 
 #skills-section .skills-container .skill .icon {
@@ -54,7 +57,6 @@
 #skills-section .skills-container .skill p {
   font-size: var(--XS-Fsize);
   color: var(--primary-color);
-  text-align: center;
 }
 
 /* Efeito de hover nos itens de habilidades */
@@ -66,31 +68,52 @@
   display: none;
 }
 
-/* Ajuste para telas maiores */
+/* Ajustes para telas menores que 1020px */
+@media (max-width: 1020px) {
+  #skills-section .skills-container.d-grid {
+    grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
+    gap: 15px;
+  }
+}
+
+/* Ajustes para tablets (768px) */
+@media (max-width: 768px) {
+  #skills-section .skills-container.d-grid {
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 15px; 
+    justify-items: center; 
+  }
+
+  /*fixando largura e altura dos cards para manter a mesma proporção*/
+  #skills-section .skills-container .skill {
+    width: 200px; 
+    height: 60px; 
+  }
+}
+
+/* Ajustes para telas menores que 550px */
 @media (max-width: 550px) {
   #skills-section .skills-container.d-grid {
-    grid-template-columns: 100%; /* Uma coluna em telas menores */
-    justify-items: center; /* Centraliza os itens */
+    grid-template-columns: 1fr; 
+    gap: 10px;
+    justify-items: center; 
   }
 
   #skills-section .skills-container .skill {
-    width: 90%; /* Ocupar uma maior parte da tela */
+    width: 200px; 
+    height: 60px; 
   }
 }
 
-/* Ajuste para dispositivos menores */
+/* Ajustes para telas muito pequenas (320px) */
 @media (max-width: 320px) {
   #skills-section .skills-container.d-grid {
-    grid-template-columns: 100%; /* Uma coluna para dispositivos pequenos */
+    grid-template-columns: 1fr; 
     justify-items: center;
   }
-}
 
-/* Ajuste para dispositivos menores */
-@media (max-width: 1020px) {
-  #skills-section .skills-container.d-grid {
-    grid-template-columns: 100%; /* Uma coluna para dispositivos pequenos */
-    justify-items: center;
+  #skills-section .skills-container .skill {
+    width: 200px; 
+    height: 60px; 
   }
 }
-
