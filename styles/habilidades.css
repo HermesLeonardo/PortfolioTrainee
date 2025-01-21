@@ -46,7 +46,7 @@
   padding: 0.7rem;
   transition: 0.2s;
   cursor: pointer;
-  width: 200px; /* Largura fixa dos cards */
+  width: 450px; /* Largura fixa dos cards */
   height: 60px; /* Altura fixa dos cards */
 }
 

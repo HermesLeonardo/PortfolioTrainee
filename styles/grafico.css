@@ -1,24 +1,21 @@
-.knowledge-charts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  text-align: center;
-  padding: 20px;
-  opacity: 0; 
-  animation: charts-entry 1s ease-out forwards; /* Aplica a animação */
+/* Definição das variáveis globais no :root */
+:root {
+  --text-color: #000; /* Cor do texto no modo claro (preto) */
+  --text-color-dark: #fff; /* Cor do texto no modo escuro (branco) */
 }
 
-.chart-container {
-  width: 200px; 
-  height: 200px;
-  margin: 20px auto;
-  opacity: 0; 
-  animation: chart-item-entry 1s ease-out forwards; 
-  animation-delay: 0.3s; 
+/* Estilos para o modo claro */
+:root.light-mode {
+  --text-color: #000; /* Preto no modo claro */
+}
+
+/* Estilos para o modo escuro */
+body.dark-mode {
+  --text-color: #fff; /* Branco no modo escuro */
 }
 
 
-/* Seção de gráficos (ficando invisível até entrar na tela) */
+/* Seção de gráficos */
 .knowledge-charts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -26,24 +23,37 @@
   text-align: center;
   padding: 20px;
   opacity: 0;
+  animation: charts-entry 1s ease-out forwards; /* Aplica a animação */
 }
 
-/* Animação de entrada para a seção de gráficos */
-.knowledge-charts.animate {
-  animation: charts-entry 1s ease-out forwards; /* Animação de entrada para a seção */
-}
-
-/* Animação de entrada para cada gráfico individual */
+/* Contêiner dos gráficos */
 .chart-container {
   width: 200px;
   height: 200px;
   margin: 20px auto;
   opacity: 0;
+  animation: chart-item-entry 1s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
-/* Animação de entrada de cada gráfico individual */
+/* Texto abaixo dos gráficos */
+.chart-container p {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+
+  /* A cor do texto muda dependendo do modo */
+  color: var(--text-color); /* Utiliza a variável --text-color */
+}
+
+/* Animação de entrada para a seção de gráficos */
+.knowledge-charts.animate {
+  animation: charts-entry 1s ease-out forwards;
+}
+
+/* Animação de entrada para cada gráfico individual */
 .chart-container.animate {
   animation: chart-item-entry 1s ease-out forwards;
-  animation-delay: 0.3s; /* Atraso entre animações dos gráficos */
+  animation-delay: 0.3s;
 }
-

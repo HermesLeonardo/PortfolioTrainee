@@ -3,8 +3,8 @@ const frontendData = {
   labels: ['Conhecimento', 'Faltando'],
   datasets: [
     {
-      data: [40, 60], 
-      backgroundColor: ['#4CAF50', '#ddd'],
+      data: [45, 55],
+      backgroundColor: ['#5e548e', '#ddd'],
     },
   ],
 };
@@ -14,7 +14,7 @@ const backendData = {
   datasets: [
     {
       data: [60, 40],
-      backgroundColor: ['#2196F3', '#ddd'],
+      backgroundColor: ['#7b2cbf', '#ddd'],
     },
   ],
 };
@@ -23,8 +23,8 @@ const databaseData = {
   labels: ['Conhecimento', 'Faltando'],
   datasets: [
     {
-      data: [70, 30],
-      backgroundColor: ['#FF5722', '#ddd'],
+      data: [40, 60],
+      backgroundColor: ['#9f86c0', '#ddd'],
     },
   ],
 };

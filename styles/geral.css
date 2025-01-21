@@ -29,6 +29,7 @@
 
 html, body {
   transition: background-color 0.7s, color 0.7s;
+  
 }
 
 /* Reset de estilos globais */
@@ -54,6 +55,7 @@ body {
   color: var(--primary-color);
   font-family: "Poppins", sans-serif;
   padding-top: 4.6rem;
+  
 }
 
 /* Container principal */
@@ -211,3 +213,5 @@ html, body {
     padding: 5%;  /* Ajusta o padding para telas pequenas */
   }
 }
+
+
