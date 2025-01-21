@@ -15,7 +15,7 @@
 
 #contact-section form input::placeholder, 
 #contact-section form textarea::placeholder {
-  color: #ffffff;
+  color: #eaeaea;
   font-size: var(--XS-Fsize);
 }
 
@@ -48,7 +48,7 @@
   border: 1px solid var(--accent-color);
   background-color: var(--accent-color);
   border-radius: 5px;
-  color: var(--neutral-color);
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -67,7 +67,7 @@ body.light-mode #contact-section form textarea::placeholder {
 
 body.light-mode #contact-section form input, 
 body.light-mode #contact-section form textarea {
-  color: #000;
+  color: #020202;
   background-color: #f5ebe0;
   border: 1px solid #d6ccc2;
   font-size: var(--medium-Fsize); /* Alteração: mantém o aumento no modo claro */
@@ -87,11 +87,16 @@ body.light-mode #contact-section form .submit-btn {
   margin: 1rem 0;
 }
 
+#contact-section form input, 
+#contact-section form textarea {
+  color: #e0e0e0; /* Cor para o texto digitado nos campos */
+}
+
 
 /*Alterar a cor do botão se necessario*/
 #contact-section .font-size-controls button {
   background-color: var(--accent-color);
-  color: var(--neutral-color);
+  color: #ffffff;
   border: none;
   padding: 0.5rem 1rem;
   font-size: var(--XS-Fsize);
@@ -102,5 +107,5 @@ body.light-mode #contact-section form .submit-btn {
 
 #contact-section .font-size-controls button:hover {
   background-color: var(--primary-color);
-  color: var(--accent-color);
+  color: #fff;
 }

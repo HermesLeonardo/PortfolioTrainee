@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const decreaseFontBtn = document.getElementById("decrease-font");
 
     // Define tamanhos mínimos e máximos
-    const minFontSize = 12; 
-    const maxFontSize = 24; 
-    let currentFontSize = 16; // Tamanho inicial do texto
+    const minFontSize = 16; 
+    const maxFontSize = 28; 
+    let currentFontSize = 20; // Tamanho inicial do texto
 
     // Função para atualizar o tamanho da fonte
     function updateFontSize(size) {

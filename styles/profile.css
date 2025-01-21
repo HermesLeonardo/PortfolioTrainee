@@ -2,8 +2,7 @@
 .profile-container {
   padding: 2.3rem 10%;
   border-radius: 16px;
-  background: linear-gradient(90deg, #4b4b4b, #878787);
-  text-align: center;
+  background: linear-gradient(180deg, rgba(75,75,75,1) 11%, rgba(135,135,135,1) 42%, rgba(0,0,0,1) 97%);  text-align: center;
   margin-bottom: 7rem;
   transition: all 0.5s ease;
   /* Adicionando uma transição suave para expansão */
@@ -36,6 +35,7 @@
   line-height: 1em;
   margin-bottom: 1rem;
   animation: name-entry 1.8s ease;
+  color: #8c8f8f;
 }
 
 .profile-container .short-about-me {
@@ -46,7 +46,35 @@
   margin-bottom: 2rem;
   line-height: 1.2em;
   animation: profile-about-entry 1.6s ease;
+  color: #8c8f8f;
 }
+
+
+
+/* Light Mode */
+body.light-mode .short-about-me {
+  color: #4a4a4a; /* Cinza escuro */
+  font-weight: 500; /* Um peso mais leve no modo claro */
+}
+
+body.light-mode .name {
+  color: #333333; /* Preto ou cinza muito escuro */
+  text-shadow: none; /* Remover sombras no modo claro */
+}
+
+/* Dark Mode */
+body.dark-mode .short-about-me {
+  color: #d3d3d3; /* Cinza claro para contraste */
+  font-weight: 700; /* Negrito para maior destaque */
+}
+
+body.dark-mode .name {
+  color: #ffffff; /* Branco */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Adicionar sombra no escuro */
+}
+
+
+
 
 .profile-container .social-media-nav ul {
   list-style: none;
@@ -69,8 +97,6 @@
   }
 
 }
-
-
 
 
 /* Responsividade */

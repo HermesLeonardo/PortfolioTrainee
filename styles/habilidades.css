@@ -18,7 +18,7 @@
 #skills-section button.selected {
   opacity: 1;
   color: var(--accent-color);
-  background-color: #00acb534;
+  background-color: #02505434;
   font-size: calc(var(--XS-Fsize) - 0.2rem);
 }
 
@@ -56,7 +56,8 @@
 
 #skills-section .skills-container .skill p {
   font-size: var(--XS-Fsize);
-  color: var(--primary-color);
+  color: #000000;
+  transition: all 0.3s ease;  
 }
 
 /* Efeito de hover nos itens de habilidades */
@@ -67,6 +68,30 @@
 #skills-section .skills-container.database-skills {
   display: none;
 }
+
+
+/* Light Mode */
+body.light-mode #skills-section .skills-container .skill p {
+  font-weight: 500; /* Peso mais leve no modo claro */
+  text-shadow: none; /* Sem sombra */
+}
+
+body.light-mode #skills-section .skills-container .skill:hover {
+  background-color: #e0f7fa; /* Azul claro */
+  color: #00a8ae; /* Azul escuro no hover */
+}
+
+/* Dark Mode */
+body.dark-mode #skills-section .skills-container .skill p {
+  color: #d3d3d3; /* Cinza claro para contraste */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Adicionar sombra para legibilidade */
+}
+
+body.dark-mode #skills-section .skills-container .skill:hover {
+  background-color: #004d40; /* Verde escuro no hover */
+  color: #ffffff; /* Texto branco */
+}
+
 
 /* Ajustes para telas menores que 1020px */
 @media (max-width: 1020px) {

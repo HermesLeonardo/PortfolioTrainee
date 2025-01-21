@@ -2,17 +2,18 @@
 footer{
   text-align: center;
   margin-top: 2rem;
-  background-color: #07929b ;
+  background-color: #00a0a8 ;
   padding-top: 1rem;
   padding-bottom: 0.1rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  color: var(--neutral-color);
+  color: azure;
 }
 
 footer .copyright-text{
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
+  color: azure;
 }
 
 footer .socmed-nav {
@@ -24,9 +25,11 @@ footer .socmed-nav ul{
   list-style: none;
   justify-content: center;
   gap: 1.2rem;
+  
 }
 
 footer .socmed-nav ul a .socmed-icon{
+  
   max-width: 1.6rem;
   filter: brightness(0) saturate(100%) invert(15%) sepia(7%) saturate(376%) hue-rotate(177deg) brightness(97%) contrast(85%);
 }

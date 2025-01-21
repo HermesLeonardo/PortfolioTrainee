@@ -13,7 +13,7 @@
   --desktop-large-Fsize: 4.375rem;
   --desktop-XL-Fsize: 88px;
 
-  --primary-color: #EEEEEE;
+  --primary-color: #595858;
   --neutral-color: #222831;
   --accent-color: #00ADB5;
   --pastel-color: #393e46;
@@ -21,15 +21,15 @@
 
 :root.light-mode {
   /* Variáveis para o modo claro */
-  --primary-color: #6c6d6d;
-  --neutral-color: #f0efeb; 
-  --accent-color: #007A7F;
-  --pastel-color: #afb9b7;
+  --primary-color: #6c757d; /*campo do textos de habilidades*/
+  --neutral-color: #56525228; /*card de projeto*/
+  --accent-color: #019ba0; /*Muda contornos*/
+  --pastel-color: #828282; /*Muda o campo de contato*/
 }
+
 
 html, body {
   transition: background-color 0.7s, color 0.7s;
-  
 }
 
 /* Reset de estilos globais */
@@ -52,10 +52,13 @@ html {
 /* Estilos gerais do corpo */
 body {
   background-color: var(--neutral-color);
+
+
   color: var(--primary-color);
-  font-family: "Poppins", sans-serif;
-  padding-top: 4.6rem;
   
+  font-family: "Poppins", sans-serif;
+
+  padding-top: 4.6rem;
 }
 
 /* Container principal */
@@ -213,5 +216,3 @@ html, body {
     padding: 5%;  /* Ajusta o padding para telas pequenas */
   }
 }
-
-

@@ -13,7 +13,7 @@
 }
 
 #projects-section.light-mode {
-  background-color: #ffffff; /* Cor de fundo para modo claro */
+  background-color: #d0d0d0; /* Cor de fundo para modo claro */
 }
 
 #projects-section .heading {
@@ -23,7 +23,7 @@
 }
 
 #projects-section.light-mode .heading {
-  color: #212529; /* Cor do texto para modo claro */
+  color: #313131; /* Cor do texto para modo claro */
 }
 
 #projects-section .projects-container {
@@ -43,10 +43,10 @@
   border-radius: 16px;
   transition: 0.4s;
   background-color: rgba(0, 0, 0, 0.5); 
-  border: 1px solid #adb5bd;
+  border: 1px solid #7c7b7b;
   flex-direction: row;
   width: 100%; 
-  max-width: 700px; /* Aumentei o limite de largura para 600px */
+  max-width: 700px; 
 }
 
 
@@ -77,7 +77,7 @@
   font-size: 26px;
   line-height: 1.2em;
   margin-bottom: 0.5rem;
-  color: #f8f9fa; /* Título com base no tema escuro */
+  color: #a1a2a3; /* Título com base no tema escuro */
   text-decoration: none; /* Remove o sublinhado */
 }
 

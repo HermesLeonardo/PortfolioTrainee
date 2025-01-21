@@ -1,15 +1,26 @@
 /* Estilos para a seção "Sobre Mim", incluindo título */
 #about-section .heading {
   font-size: clamp(3.125rem, 9vw, 6.25rem);
+  color: #6c757d; /* Cor no modo claro */
+}
+
+/* Adicionando estilos para o modo escuro */
+body.dark-mode #about-section .heading {
+  color: #e0e0e0; /* Cor do texto no modo escuro */
 }
 
 #about-section .more-about-me {
   font-size: var(--small-Fsize);
-  color: var(--primary-color);
+  color: #000000;
   opacity: 0.7;
   margin-bottom: 5rem;
   text-align: center;
   opacity: 0;
+}
+
+/* Estilo no modo escuro */
+body.dark-mode #about-section .more-about-me {
+  color: #bbbbbb; /* Cor do texto no modo escuro */
 }
 
 .years-of-doing.d-grid .clients {
@@ -27,8 +38,13 @@
 
 #about-section .years-of-doing p {
   font-size: var(--XS-Fsize);
-  color: var(--primary-color);
+  color: #ffffff;  /* Cor do texto no modo claro */
   opacity: 0.7;
+}
+
+/* Estilo no modo escuro */
+body.dark-mode #about-section .years-of-doing p {
+  color: #d0d0d0;  /* Cor do texto no modo escuro */
 }
 
 @media(width >= 1000px) {
@@ -45,6 +61,7 @@
       grid-column: initial;
   }
 }
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 320px) {
   /* Aqui, você pode adicionar ajustes adicionais conforme necessário */
