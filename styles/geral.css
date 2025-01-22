@@ -88,7 +88,6 @@ section .heading span {
   text-decoration: none; /* Garante que spans não tenham sublinhado */
 }
 
-/* Botão de modo escuro alterar cores do icone aqui */
 button#darkModeToggle {
   position: fixed;
   top: 20px;
@@ -98,12 +97,16 @@ button#darkModeToggle {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 50%;
+  width: 50px; /* Definindo largura */
+  height: 50px; /* Definindo altura igual à largura */
+  padding: 0; /* Garantindo que o padding não afete o tamanho */
+  border-radius: 50%; /* Mantendo o formato redondo */
   box-shadow: 0px 4px 6px rgb(10, 10, 10);
   transition: background-color 0.3s, transform 0.3s;
   z-index: 1000;
+  right: 40px;
 }
+
 
 button#darkModeToggle:hover {
   background-color: var(--pastel-color);
