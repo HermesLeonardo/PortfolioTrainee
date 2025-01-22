@@ -57,3 +57,55 @@ body.dark-mode {
   animation: chart-item-entry 1s ease-out forwards;
   animation-delay: 0.3s;
 }
+
+/* Responsividade para laptops (1024px) */
+@media (max-width: 1025px) {
+  .knowledge-charts {
+    grid-template-columns: repeat(1, 35rem); /* Ajusta para duas colunas */
+    gap: 20px; /* Espaçamento entre os gráficos */
+  }
+
+  .chart-container {
+    width: 200px; /* Tamanho ligeiramente menor */
+    height: 200px;
+  }
+
+  .chart-container p {
+    font-size: 1.5rem; /* Mantém o tamanho do texto legível */
+  }
+}
+
+
+/* Telas menores (768px ou menos): 2 gráficos por linha */
+@media (max-width: 768px) {
+  .knowledge-charts {
+    grid-template-columns: repeat(2, 1fr); /* Ajusta para duas colunas */
+    gap: 15px; /* Reduz o espaçamento entre os gráficos */
+  }
+
+  .chart-container {
+    width: 180px; /* Ajusta o tamanho dos gráficos */
+    height: 180px;
+  }
+
+  .chart-container p {
+    font-size: 0.9rem; /* Reduz o tamanho do texto */
+  }
+}
+
+/* Telas muito pequenas (480px ou menos): 1 gráfico por linha */
+@media (max-width: 480px) {
+  .knowledge-charts {
+    grid-template-columns: 1fr; /* Apenas uma coluna */
+    gap: 10px; /* Menor espaçamento entre os gráficos */
+  }
+
+  .chart-container {
+    width: 150px; /* Tamanho reduzido para gráficos menores */
+    height: 150px;
+  }
+
+  .chart-container p {
+    font-size: 0.8rem; /* Ajusta o tamanho do texto para telas pequenas */
+  }
+}

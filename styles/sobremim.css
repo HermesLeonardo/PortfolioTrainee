@@ -57,9 +57,7 @@ body.dark-mode #about-section .years-of-doing p {
       line-height: 1.2em;
   }
 
-  .years-of-doing.d-grid .clients {
-      grid-column: initial;
-  }
+
 }
 
 /* Responsividade para dispositivos móveis */
@@ -68,4 +66,27 @@ body.dark-mode #about-section .years-of-doing p {
   .main-wrapper {
     padding: 5%;  /* Ajusta o padding para telas pequenas */
   }
+
+  #about-section .heading {
+    font-size: clamp(2rem, 7vw, 4.375rem);
+  }
+
+}
+
+@media (max-width: 1024px) {
+  /* Aqui, você pode adicionar ajustes adicionais conforme necessário */
+  .main-wrapper {
+    text-align: left;
+  }
+  #about-section .more-about-me {
+    text-align: left;
+    width: 70%;
+    font-size: clamp(1.0rem, 2vw, 1.2rem);
+  }
+
+  #about-section .heading {
+    font-size: clamp(2rem, 7vw, 4.375rem);
+    text-align: left;
+  }
+
 }

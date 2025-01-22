@@ -1,6 +1,8 @@
 /* Estilos e animações para a seção de habilidades */
 #skills-section .heading {
   margin-bottom: 2rem;
+  word-wrap: break-word; 
+
 }
 
 #skills-section button {
@@ -18,14 +20,15 @@
 #skills-section button.selected {
   opacity: 1;
   color: var(--accent-color);
-  background-color: #02505434;
+  background-color: #02878e34;
   font-size: calc(var(--XS-Fsize) - 0.2rem);
 }
 
 /* Layout da seção de habilidades em grid */
 #skills-section .skills-container.d-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Duas colunas por padrão */
+  grid-template-columns: repeat(2, 1fr);
+  /* Duas colunas por padrão */
   gap: 10px;
 }
 
@@ -46,8 +49,10 @@
   padding: 0.7rem;
   transition: 0.2s;
   cursor: pointer;
-  width: 450px; /* Largura fixa dos cards */
-  height: 60px; /* Altura fixa dos cards */
+  width: 450px;
+  /* Largura fixa dos cards */
+  height: 60px;
+  /* Altura fixa dos cards */
 }
 
 #skills-section .skills-container .skill .icon {
@@ -57,7 +62,7 @@
 #skills-section .skills-container .skill p {
   font-size: var(--XS-Fsize);
   color: #000000;
-  transition: all 0.3s ease;  
+  transition: all 0.3s ease;
 }
 
 /* Efeito de hover nos itens de habilidades */
@@ -72,73 +77,91 @@
 
 /* Light Mode */
 body.light-mode #skills-section .skills-container .skill p {
-  font-weight: 500; /* Peso mais leve no modo claro */
-  text-shadow: none; /* Sem sombra */
+  font-weight: 500;
+  /* Peso mais leve no modo claro */
+  text-shadow: none;
+  /* Sem sombra */
 }
 
 body.light-mode #skills-section .skills-container .skill:hover {
-  background-color: #e0f7fa; /* Azul claro */
-  color: #00a8ae; /* Azul escuro no hover */
+  background-color: #e0f7fa;
+  /* Azul claro */
+  color: #00a8ae;
+  /* Azul escuro no hover */
 }
 
 /* Dark Mode */
 body.dark-mode #skills-section .skills-container .skill p {
-  color: #d3d3d3; /* Cinza claro para contraste */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Adicionar sombra para legibilidade */
+  color: #d3d3d3;
+  /* Cinza claro para contraste */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  /* Adicionar sombra para legibilidade */
 }
 
 body.dark-mode #skills-section .skills-container .skill:hover {
-  background-color: #004d40; /* Verde escuro no hover */
-  color: #ffffff; /* Texto branco */
+  background-color: #004d40;
+  /* Verde escuro no hover */
+  color: #ffffff;
+  /* Texto branco */
 }
 
 
-/* Ajustes para telas menores que 1020px */
-@media (max-width: 1020px) {
+/* Ajustes para telas menores que 1024px */
+@media (max-width: 1024px) {
   #skills-section .skills-container.d-grid {
-    grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas */
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Ajusta os cards ao tamanho da tela */
+    width: 10%;
+    /* Ajusta a largura dos cards */
   }
 }
 
 /* Ajustes para tablets (768px) */
 @media (max-width: 768px) {
   #skills-section .skills-container.d-grid {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    gap: 15px; 
-    justify-items: center; 
+    grid-template-columns: repeat(2, 1fr);
+    /* Duas colunas */
+    gap: 15px;
+    justify-items: center;
   }
 
   /*fixando largura e altura dos cards para manter a mesma proporção*/
   #skills-section .skills-container .skill {
-    width: 200px; 
-    height: 60px; 
+    width: 200px;
+    height: 60px;
   }
 }
 
 /* Ajustes para telas menores que 550px */
 @media (max-width: 550px) {
   #skills-section .skills-container.d-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 10px;
-    justify-items: center; 
+    justify-items: center;
   }
 
   #skills-section .skills-container .skill {
-    width: 200px; 
-    height: 60px; 
+    width: 200px;
+    height: 60px;
   }
 }
 
 /* Ajustes para telas muito pequenas (320px) */
 @media (max-width: 320px) {
-  #skills-section .skills-container.d-grid {
-    grid-template-columns: 1fr; 
-    justify-items: center;
+  #skills-section .heading {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    font-size: 1.2rem; 
+    white-space: normal; 
   }
 
-  #skills-section .skills-container .skill {
-    width: 200px; 
-    height: 60px; 
+  #skills-section .skills-container.d-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 10%;
+    align-items: center;
+    justify-items: center;
+    width: 50%;
   }
 }

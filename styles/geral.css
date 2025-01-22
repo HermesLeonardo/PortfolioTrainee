@@ -172,16 +172,16 @@ body {
 .main-wrapper {
   --main-wrapper-max-width: 1100px;
   --main-wrapper-padding: 10%;
-  width: 100%;  /* Garante que o contêiner ocupe 100% da largura */
-  max-width: var(--main-wrapper-max-width);  /* Limita a largura máxima */
+  width: 100%; 
+  max-width: var(--main-wrapper-max-width);  
   margin-inline: auto;
 }
 
 /* Ajustes para as seções e itens dentro delas */
 section {
   margin-top: 10rem;
-  width: 100%;  /* Garante que as seções ocupem toda a largura */
-  padding: 0 1rem;  /* Adiciona um pouco de padding para evitar transbordamento */
+  width: 100%;  
+  padding: 0 1rem;  
 }
 
 section .heading {
@@ -190,7 +190,7 @@ section .heading {
   line-height: 1em;
   margin-bottom: 1rem;
   opacity: 0;
-  width: 100%;  /* Garante que o título ocupe 100% da largura */
+  width: 100%; 
 }
 
 /* Impede overflow horizontal em telas pequenas */
@@ -211,8 +211,7 @@ html, body {
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 320px) {
-  /* Aqui, você pode adicionar ajustes adicionais conforme necessário */
   .main-wrapper {
-    padding: 5%;  /* Ajusta o padding para telas pequenas */
+    padding: 5%;  
   }
 }

@@ -98,10 +98,16 @@ body.dark-mode .name {
 
 }
 
-
 /* Responsividade */
 @media (max-width: 768px) {
   .profile-container.expanded {
     transform: scale(1.05);
+  }
+}
+
+@media (max-width: 1020px) {
+  .profile-container.expanded {
+    transform: scale(1.05);
+    margin-left: 20%; /* Ajuste o valor conforme necessário */
   }
 }
