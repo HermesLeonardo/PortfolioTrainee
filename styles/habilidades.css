@@ -150,7 +150,6 @@ body.dark-mode #skills-section .skills-container .skill:hover {
 @media (max-width: 320px) {
   #skills-section .heading {
     display: -webkit-box;
-    -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
     overflow: hidden; 
     font-size: 1.2rem; 
