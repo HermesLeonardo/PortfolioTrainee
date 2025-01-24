@@ -184,8 +184,8 @@ body.dark-mode #skills-section .skills-container .skill:hover {
     width: 10%;
     align-items: center;
     justify-items: center;
-    width: 50%;
-    margin-left: 0rem;
+    width: 10rem;
+    margin-left: 1rem;
   }
 
  

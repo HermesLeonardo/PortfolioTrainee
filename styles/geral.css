@@ -216,6 +216,9 @@ body {
     margin-top: 6rem;
     padding-inline: 0.8rem;
   }
+  button#darkModeToggle {
+    display: none;
+  }
 }
 
 /* 320px e menores (Celulares pequenos) */
@@ -227,5 +230,8 @@ body {
   section {
     margin-top: 6rem;
     padding-inline: 0.5rem;
+  }
+  button#darkModeToggle {
+    display: none;
   }
 }
