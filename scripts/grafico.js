@@ -4,7 +4,7 @@ const frontendData = {
   datasets: [
     {
       data: [45, 55],
-      backgroundColor: ['#5e548e', '#ddd'],
+      backgroundColor: ['#57CFF7', '#ddd'],
     },
   ],
 };
@@ -14,7 +14,7 @@ const backendData = {
   datasets: [
     {
       data: [60, 40],
-      backgroundColor: ['#7b2cbf', '#ddd'],
+      backgroundColor: ['#4F64FF', '#ddd'],
     },
   ],
 };
@@ -24,7 +24,7 @@ const databaseData = {
   datasets: [
     {
       data: [40, 60],
-      backgroundColor: ['#9f86c0', '#ddd'],
+      backgroundColor: ['#734FFF', '#ddd'],
     },
   ],
 };

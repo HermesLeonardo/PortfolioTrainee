@@ -8,25 +8,23 @@
   --mobile-XL-Fsize: 45px;
 
   --desktop-small-Fsize: 24px;
-  --small-Fsize: 18px;
-  --medium-Fsize: 1.6rem;
+  --desktop-medium-Fsize: 1.6rem;
   --desktop-large-Fsize: 4.375rem;
   --desktop-XL-Fsize: 88px;
 
-  --primary-color: #595858;
-  --neutral-color: #222831;
-  --accent-color: #00ADB5;
-  --pastel-color: #393e46;
+  --primary-color: #A8A8A8; /* Silver */
+  --neutral-color: #1B1F23; /* Eerie black */
+  --accent-color: #4E9AFE; /* Cornflower blue */
+  --pastel-color: #6759b612; /* Purpureus */
 }
 
 :root.light-mode {
   /* Variáveis para o modo claro */
-  --primary-color: #6c757d; /*campo do textos de habilidades*/
-  --neutral-color: #56525228; /*card de projeto*/
-  --accent-color: #019ba0; /*Muda contornos*/
-  --pastel-color: #828282; /*Muda o campo de contato*/
+  --primary-color: #1f1f1f;
+  --neutral-color: #E6E6E6;
+  --accent-color: #4E9AFE;
+  --pastel-color: #6759b612;
 }
-
 
 html, body {
   transition: background-color 0.7s, color 0.7s;
@@ -52,61 +50,55 @@ html {
 /* Estilos gerais do corpo */
 body {
   background-color: var(--neutral-color);
-
-
   color: var(--primary-color);
-  
   font-family: "Poppins", sans-serif;
-
   padding-top: 4.6rem;
 }
 
 /* Container principal */
 .main-wrapper {
-  --main-wrapper-max-width: 1100px;
+  --main-wrapper-max-width: 1024px;
   --main-wrapper-padding: 10%;
-
-  width: min(var(--main-wrapper-max-width), 100% - var(--main-wrapper-padding));
+  width: 100%;
+  max-width: var(--main-wrapper-max-width);
   margin-inline: auto;
+  padding-inline: var(--main-wrapper-padding);
 }
 
 /* Espaçamento entre seções */
 section {
   margin-top: 10rem;
+  padding-inline: 1rem;
+  width: 100%;
 }
 
 /* Cabeçalhos das seções */
 section .heading {
   font-size: clamp(var(--mobile-XL-Fsize), 8vw, var(--desktop-XL-Fsize));
   text-align: center;
-  line-height: 1em;
+  line-height: 1.2em;
   margin-bottom: 1rem;
   opacity: 0;
 }
 
-section .heading span {
-  text-decoration: none; /* Garante que spans não tenham sublinhado */
-}
-
+/* Botão de toggle para modo escuro */
 button#darkModeToggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #222831;
+  background-color: #828282;
   color: #ffffff;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  width: 50px; /* Definindo largura */
-  height: 50px; /* Definindo altura igual à largura */
-  padding: 0; /* Garantindo que o padding não afete o tamanho */
-  border-radius: 50%; /* Mantendo o formato redondo */
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
   box-shadow: 0px 4px 6px rgb(10, 10, 10);
   transition: background-color 0.3s, transform 0.3s;
   z-index: 1000;
-  right: 40px;
 }
-
 
 button#darkModeToggle:hover {
   background-color: var(--pastel-color);
@@ -128,93 +120,112 @@ body.dark-mode button#darkModeToggle:hover {
 }
 
 a {
-  text-decoration: none; /* Remove o sublinhado */
+  text-decoration: none;
 }
 
-
 html, body {
-  margin: 0; /* Remove margens globais */
-  padding: 0; /* Remove padding global */
-  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-x: hidden;
   height: 100%;
   width: 100%;
 }
 
 body {
   display: flex;
-  flex-direction: column; /* Garante que o conteúdo seja empurrado para cima */
-  min-height: 100vh; /* Altura mínima da página inteira */
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.main-wrapper {
-  flex: 1; /* Faz o conteúdo ocupar o máximo espaço possível */
-}
-
-
-/* Media queries */
-@media (width >= 1000px) {
-  main {
-    display: flex;
-    column-gap: 5rem;
-    padding-top: 8rem;
+/* 1024px+ */
+@media (min-width: 1024px) {
+  .main-wrapper {
+    max-width: 1100px;
+    padding-left: 350px; /* Move o conteúdo para direita */
   }
 
-  section:first-child {
-    margin-top: 0rem;
+  section {
+    margin-top: 10rem;
   }
 
   section .heading {
-    font-size: clamp(var(--mobile-XL-Fsize), 8vw, var(--desktop-XL-Fsize));
-    text-align: left;
-    line-height: 1em;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+  }
+
+  main {
+    column-gap: 6rem;
   }
 }
 
-/* Container principal */
-.main-wrapper {
-  --main-wrapper-max-width: 1100px;
-  --main-wrapper-padding: 10%;
-  width: 100%; 
-  max-width: var(--main-wrapper-max-width);  
-  margin-inline: auto;
+/* 1440px+ */
+@media (min-width: 1440px) {
+  .main-wrapper {
+    max-width: 1200px;
+    padding-left: 370px; /* Ajusta melhor o conteúdo */
+  }
+
+  section .heading {
+    font-size: 3.5rem;
+  }
+
+  main {
+    column-gap: 8rem;
+  }
 }
 
-/* Ajustes para as seções e itens dentro delas */
-section {
-  margin-top: 10rem;
-  width: 100%;  
-  padding: 0 1rem;  
-}
+/* 768px - 1023px (Tablets e dispositivos médios) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .main-wrapper {
+    padding-inline: 2rem;
+  }
 
-section .heading {
-  font-size: clamp(var(--mobile-XL-Fsize), 8vw, var(--desktop-XL-Fsize));
-  text-align: center;
-  line-height: 1em;
-  margin-bottom: 1rem;
-  opacity: 0;
-  width: 100%; 
-}
+  section {
+    padding-inline: 2rem;
+  }
 
-/* Impede overflow horizontal em telas pequenas */
-html, body {
-  overflow-x: hidden;  
-  width: 100%;         
-  height: 100%;        
-  margin: 0;           
-}
-
-
-@media (max-width: 600px) {
   button#darkModeToggle {
     font-size: 1.2rem;
-    padding: 8px 12px;
+    width: 45px;
+    height: 45px;
   }
 }
 
-/* Responsividade para dispositivos móveis */
+/* 600px - 767px (Tablets pequenos) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .main-wrapper {
+    padding-inline: 1.5rem;
+  }
+
+  section {
+    margin-top: 8rem;
+    padding-inline: 1rem;
+  }
+
+  button#darkModeToggle {
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* 321px - 599px (Celulares médios) */
+@media (max-width: 599px) and (min-width: 321px) {
+  .main-wrapper {
+    padding-inline: 1.2rem;
+  }
+
+  section {
+    margin-top: 6rem;
+    padding-inline: 0.8rem;
+  }
+}
+
+/* 320px e menores (Celulares pequenos) */
 @media (max-width: 320px) {
   .main-wrapper {
-    padding: 5%;  
+    padding-inline: 1rem;
+  }
+
+  section {
+    margin-top: 6rem;
+    padding-inline: 0.5rem;
   }
 }

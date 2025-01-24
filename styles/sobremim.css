@@ -6,7 +6,11 @@
 
 /* Adicionando estilos para o modo escuro */
 body.dark-mode #about-section .heading {
-  color: #e0e0e0; /* Cor do texto no modo escuro */
+  color: #6893CC; /* Cor do texto no modo escuro */
+}
+
+body.ligth-mode #about-section .heading {
+  color: #5B6066; /* Cor do texto no modo claro */
 }
 
 #about-section .more-about-me {
@@ -31,10 +35,6 @@ body.dark-mode #about-section .more-about-me {
   opacity: 0;
 }
 
-#about-section .years-of-doing .years {
-  font-size: clamp(3.125rem, 7vw, 4.375rem);
-  line-height: 1.2em;
-}
 
 #about-section .years-of-doing p {
   font-size: var(--XS-Fsize);
@@ -74,7 +74,6 @@ body.dark-mode #about-section .years-of-doing p {
 }
 
 @media (max-width: 1024px) {
-  /* Aqui, você pode adicionar ajustes adicionais conforme necessário */
   .main-wrapper {
     text-align: left;
   }

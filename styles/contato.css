@@ -7,7 +7,14 @@
 
 #contact-section .heading {
   margin-bottom: 2rem;
+  color: #5B6066;
 }
+
+body.dark-mode #contact-section .heading {
+  margin-bottom: 2rem;
+  color: #6893CC;
+}
+
 
 #contact-section .input {
   opacity: 0; /* Os inputs começam invisíveis */
@@ -15,7 +22,7 @@
 
 #contact-section form input::placeholder, 
 #contact-section form textarea::placeholder {
-  color: #eaeaea;
+  color: #676666;
   font-size: var(--XS-Fsize);
 }
 
@@ -26,7 +33,7 @@
   width: 100%;
   padding: 0.7rem 0.9rem;
   border-radius: 10px;
-  border: 1px solid #00adb5;
+  border: 1px solid #4E9AFE;
   font-size: var(--medium-Fsize); /* Alteração: aumento do tamanho da fonte do conteúdo digitado */
 }
 
@@ -62,15 +69,16 @@
 /* Modo claro */
 body.light-mode #contact-section form input::placeholder, 
 body.light-mode #contact-section form textarea::placeholder {
-  color: #080808;
+  color: #000000;
 }
 
 body.light-mode #contact-section form input, 
 body.light-mode #contact-section form textarea {
   color: #020202;
-  background-color: #f5ebe0;
+  background-color: #696969;
   border: 1px solid #d6ccc2;
   font-size: var(--medium-Fsize); /* Alteração: mantém o aumento no modo claro */
+  
 }
 
 body.light-mode #contact-section form .submit-btn {
@@ -87,11 +95,15 @@ body.light-mode #contact-section form .submit-btn {
   margin: 1rem 0;
 }
 
-#contact-section form input, 
-#contact-section form textarea {
-  color: #e0e0e0; /* Cor para o texto digitado nos campos */
+
+
+body.light-mode #contact-section form textarea {
+  color: #000000;
 }
 
+body.dark-mode #contact-section form textarea {
+  color: #c9c9c9;
+}
 
 /*Alterar a cor do botão se necessario*/
 #contact-section .font-size-controls button {
@@ -108,4 +120,38 @@ body.light-mode #contact-section form .submit-btn {
 #contact-section .font-size-controls button:hover {
   background-color: var(--primary-color);
   color: #fff;
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  #contact-section .font-size-controls {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact-section form input,
+  #contact-section form textarea {
+    font-size: calc(var(--medium-Fsize) - 0.3rem); /* Ajuste no tamanho da fonte */
+  }
+
+  #contact-section .font-size-controls {
+    gap: 1rem;
+  }
+
+  #contact-section form .submit-btn {
+    padding: 0.4rem 1rem; /* Ajuste no tamanho do botão */
+  }
+}
+
+@media (max-width: 480px) {
+  #contact-section form input,
+  #contact-section form textarea {
+    font-size: calc(var(--medium-Fsize) - 0.5rem); /* Ajuste no tamanho da fonte */
+  }
+
+  #contact-section form .submit-btn {
+    padding: 0.4rem 0.8rem; /* Ajuste no tamanho do botão */
+  }
 }

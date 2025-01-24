@@ -1,113 +1,125 @@
-/* Estilos para a seção de perfil, parte onde tem a foto, incluindo animações de entrada e configuração do layout */
+/* Estilos para a seção de perfil */
 .profile-container {
   padding: 2.3rem 10%;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(75,75,75,1) 11%, rgba(135,135,135,1) 42%, rgba(0,0,0,1) 97%);  text-align: center;
-  margin-bottom: 7rem;
-  transition: all 0.5s ease;
-  /* Adicionando uma transição suave para expansão */
-}
-
-.profile-container.fixed {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, rgba(75, 75, 75, 1) 11%, rgba(135, 135, 135, 1) 42%, rgba(0, 0, 0, 1) 97%);
   text-align: center;
   margin-bottom: 7rem;
-  animation: profile-entry 1.5s forwards ease;
+  transition: all 0.5s ease;
+  position: relative;
+  max-width: 250px; /* Reduzindo a largura do card */
+  max-height: 800px;
 }
 
-.profile-container.expanded {
-  transform: scale(1.2);
-  /* Aumentando o tamanho do card */
-  transition: all 0.5s ease;
-  /* Garantindo que a expansão tenha animação suave */
+/* Ajuste para telas grandes (1024px e acima) */
+@media (min-width: 1024px) {
+  .profile-container {
+    position: fixed;
+    top: 6rem;
+    left: 2rem;
+    width: 170px; /* Reduzindo mais a largura */
+    height: auto;
+    padding: 1.2rem 0.8rem;
+    z-index: 100;
+    margin: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-container .profile-pic {
+    max-width: 85%; /* Ajustando o tamanho da imagem */
+  }
+
+  .profile-container .social-media-nav ul li a img {
+    max-width: 3.5rem; /* Diminuindo os ícones sociais */
+  }
+}
+
+/* Ajuste para telas muito grandes (1440px e acima) */
+@media (min-width: 1440px) {
+  .profile-container {
+    width: 230px; /* Ajuste menor do que antes */
+  }
+}
+
+@media (max-width: 1023px) {
+  .profile-container {
+    position: static;
+    width: 90%; /* Mantendo proporcional em telas menores */
+    margin: 2rem auto;
+    padding: 1.2rem;
+  }
 }
 
 .profile-container .profile-pic {
-  border-radius: 16px;
-  margin-bottom: 1.5rem;
-  max-width: 26rem;
-  transition: all 0.5s ease;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  max-width: 90%; /* Reduzindo levemente */
+  transition: all 1.5s ease;
 }
 
 .profile-container .name {
-  color: var(--neutral-color);
-  font-size: 2.50rem;
-  line-height: 1em;
-  margin-bottom: 1rem;
-  animation: name-entry 1.8s ease;
-  color: #8c8f8f;
+  font-size: 2rem; 
+  margin-bottom: 1rem; 
 }
 
 .profile-container .short-about-me {
-  color: var(--neutral-color);
-  font-size: 18px;
-  font-weight: 600;
-  opacity: 0.7;
-  margin-bottom: 2rem;
-  line-height: 1.2em;
-  animation: profile-about-entry 1.6s ease;
-  color: #8c8f8f;
+  font-size: 16px; 
 }
 
-
-
-/* Light Mode */
-body.light-mode .short-about-me {
-  color: #4a4a4a; /* Cinza escuro */
-  font-weight: 500; /* Um peso mais leve no modo claro */
-}
-
-body.light-mode .name {
-  color: #333333; /* Preto ou cinza muito escuro */
-  text-shadow: none; /* Remover sombras no modo claro */
-}
-
-/* Dark Mode */
-body.dark-mode .short-about-me {
-  color: #d3d3d3; /* Cinza claro para contraste */
-  font-weight: 700; /* Negrito para maior destaque */
-}
-
-body.dark-mode .name {
-  color: #ffffff; /* Branco */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Adicionar sombra no escuro */
-}
-
-
-
-
+/* Redes sociais do perfil */
 .profile-container .social-media-nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .profile-container .social-media-nav ul li a img {
-  max-width: 1.5rem;
+  max-width: 2.5rem; /* Reduzindo o tamanho dos ícones sociais */
+  top: 10px;
 }
 
-@media (min-width: 1000px) {
-  .profile-container.fixed {
-    position: sticky;
-    top: 5.3rem;
-    max-height: 35rem;
-    width: 50rem;
-    padding: 2.3rem 1.6rem;
+/*Ajustes para telas menores */
+@media (max-width: 620px) {
+  .profile-container .name {
+    font-size: 1.8rem;
   }
-
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .profile-container.expanded {
-    transform: scale(1.05);
+  .profile-container .short-about-me {
+    font-size: 14px;
+  }
+  .profile-container .social-media-nav ul li a img {
+    max-width: 3rem;
   }
 }
 
-@media (max-width: 1020px) {
-  .profile-container.expanded {
-    transform: scale(1.05);
-    margin-left: 20%; /* Ajuste o valor conforme necessário */
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 1rem;
+  }
+  .profile-container .name {
+    font-size: 1.6rem;
+  }
+  .profile-container .short-about-me {
+    font-size: 13px;
+  }
+  .profile-container .social-media-nav ul li a img {
+    max-width: 2.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .profile-container {
+    padding: 0.8rem;
+  }
+  .profile-container .name {
+    font-size: 1.4rem;
+  }
+  .profile-container .short-about-me {
+    font-size: 12px;
+  }
+  .profile-container .social-media-nav ul li a img {
+    max-width: 2.5rem;
   }
 }
